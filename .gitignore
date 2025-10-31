@@ -1,0 +1,26 @@
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# --- Env / Secrets ---
+.env
+.env.*.local
+*.pem
+*.key
+
+# --- Python (uv) ---
+py/.python-version
+py/.venv/
+py/.pytest_cache/
+py/__pycache__/
+py/**/__pycache__/
+py/**/*.pyc
+py/.ruff_cache/
+py/.mypy_cache/
+py/.coverage
+py/htmlcov/
