@@ -14,7 +14,7 @@
 {% tab title="200: OK " %}
 
 ```javascript
-}
+{}
 ```
 
 {% endtab %}

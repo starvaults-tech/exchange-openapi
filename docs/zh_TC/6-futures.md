@@ -2,7 +2,7 @@
 
 ## 公共
 
-### 安全類型: [None](https://github.com/exhcange/OpenApi-en/blob/master/broken-reference/README.md)
+### 安全類型
 
 公共下方的接口不需要API-key或者簽名就能自由訪問
 
@@ -109,7 +109,7 @@
 
 ## 行情相關
 
-### 安全類型: [None](https://github.com/exhcange/OpenApi-en/blob/master/broken-reference/README.md)
+### 安全類型
 
 行情下方的接口不需要API-Key或者簽名就能自由訪問
 
@@ -346,9 +346,9 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 交易相關
 
-### 安全類型: [TRADE](https://github.com/exhcange/OpenApi-en/blob/master/broken-reference/README.md)
+### 安全類型
 
-交易下方的接口都需要[簽名和API-key驗證](https://github.com/exhcange/OpenApi-en/blob/master/broken-reference/README.md)
+交易下方的接口都需要簽名和API-key驗證
 
 ## 創建訂單
 
@@ -911,9 +911,9 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 賬戶
 
-### 安全類型:[ USER\_DATA](https://github.com/exhcange/OpenApi-en/blob/master/broken-reference/README.md)
+### 安全類型 USER\_DATA
 
-賬戶下方的接口都需要[簽名和API-key驗證](https://github.com/exhcange/OpenApi-en/blob/master/broken-reference/README.md)
+賬戶下方的接口都需要簽名和API-key驗證
 
 ## 賬戶信息
 
