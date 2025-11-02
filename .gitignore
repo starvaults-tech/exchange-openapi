@@ -1,11 +1,15 @@
+**/jupyter/
+**/tests/
+.vscode/
+.idea/
+kline/
+
 # --- OS / Editor ---
 .DS_Store
 Thumbs.db
 *.log
 *.swp
 *.swo
-.vscode/
-.idea/
 
 # --- Env / Secrets ---
 .env
@@ -14,13 +18,14 @@ Thumbs.db
 *.key
 
 # --- Python (uv) ---
-py/.python-version
-py/.venv/
-py/.pytest_cache/
-py/__pycache__/
-py/**/__pycache__/
-py/**/*.pyc
-py/.ruff_cache/
-py/.mypy_cache/
-py/.coverage
-py/htmlcov/
+python-sdk/.python-version
+python-sdk/.venv/
+python-sdk/.pytest_cache/
+python-sdk/__pycache__/
+python-sdk/**/__pycache__/
+python-sdk/**/**/__pycache__/
+python-sdk/**/*.pyc
+python-sdk/.ruff_cache/
+python-sdk/.mypy_cache/
+python-sdk/.coverage
+python-sdk/htmlcov/
