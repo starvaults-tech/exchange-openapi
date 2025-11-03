@@ -111,18 +111,28 @@ class FuturesClient(BaseClient):
         position_type: Literal[1, 2] = 1,  # 1 Cross Margin, 2 Isolated Margin
         client_order_id: Optional[str] = None, # length < 32
         time_in_force: Optional[Literal["IOC", "FOK", "POST_ONLY", None]] = None,
+        order_unit: int = 1,
     ) -> Any:
         """Create a futures order."""
-        payload = locals().copy()
-        payload.pop("self", None)
         return self._private_post("/fapi/v1/order", {
+            "positionType":1,
+            "side":"BUY",
+            "volume":0.1,
+            "open":"OPEN",
+            "type":"MARKET",
+            "orderUnit":1,
+            "contractName":"S-BTC-USDT"
+        })
+
+        return self._private_post("/fapi/v1/order", {
+            "positionType" : position_type,
+            "side" : side,
             "volume" : volume,
+            "open" : open,
+            "type" : type,
+            "orderUnit" : order_unit,
             "price" : price,
             "contractName" : contract_name,
-            "type" : type,
-            "side" : side,
-            "open" : open,
-            "positionType" : position_type,
             "clientOrderId" : client_order_id,
             "timeInForce" : time_in_force,
         })
@@ -210,8 +220,8 @@ class FuturesClient(BaseClient):
     ) -> Any:
         """Change leverage for a contract."""
         return self._private_post("/fapi/v1/edit_lever", {
-            "contractName": contract_name,
             "nowLevel": now_level,
+            "contractName": contract_name,
         })
 
     # Account endpoints ----------------------------------------------------

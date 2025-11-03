@@ -7,6 +7,7 @@ import hmac
 import hashlib
 import json
 from typing import Any, Dict, Optional
+from collections import OrderedDict
 
 import requests
 from urllib.parse import urlencode
@@ -21,6 +22,10 @@ API_SECRET = os.getenv("API_SECRET", "")
 DEFAULT_SESSION = requests.Session()
 DEFAULT_SESSION.headers.update({"Content-Type": "application/json"})
 
+def canonical_json(obj: dict) -> str:
+    # ordered = OrderedDict(sorted(obj.items()))
+    ordered = obj.copy()
+    return json.dumps(ordered, separators=(",", ":"), ensure_ascii=False)
 
 def get(
     path: str,
@@ -41,7 +46,7 @@ def get(
 def sign_headers(
     method: str,
     request_path: str,
-    body_obj: Optional[Dict[str, Any]] = None,
+    body_str: str = "",
     *,
     api_key: Optional[str] = None,
     api_secret: Optional[str] = None,
@@ -54,11 +59,6 @@ def sign_headers(
     api_key = api_key or API_KEY
     api_secret = api_secret or API_SECRET
     method_upper = method.upper()
-
-    body_str = ""
-    if body_obj is not None:
-        body_str = json.dumps(body_obj, separators=(",", ":"), ensure_ascii=False)
-
     payload = f"{timestamp}{method_upper}{request_path}{body_str}"
     signature = hmac.new(
         api_secret.encode("utf-8"),
@@ -67,10 +67,11 @@ def sign_headers(
     ).hexdigest()
 
     return {
-        "X-CH-APIKEY": api_key,
         "X-CH-TS": timestamp,
+        "X-CH-APIKEY": api_key,
         "X-CH-SIGN": signature,
         "Content-Type": "application/json",
+        "futures-version": "101"
     }
 
 
@@ -119,17 +120,22 @@ def private_post(
     session = session or DEFAULT_SESSION
     request_path = path
     url = f"{base_url}{request_path}"
+
+    body_str = canonical_json(body)
+
+    print(body_str)
+
     headers = sign_headers(
         "POST",
         request_path,
-        body,
+        body_str,
         api_key=api_key,
         api_secret=api_secret,
     )
     response = session.post(
         url,
         headers=headers,
-        data=json.dumps(body, ensure_ascii=False),
+        data=body_str,
         timeout=10,
     )
     response.raise_for_status()
