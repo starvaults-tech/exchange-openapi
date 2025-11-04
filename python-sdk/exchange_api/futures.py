@@ -52,7 +52,7 @@ class FuturesClient(BaseClient):
     def depth(
         self,
         contract_name: str,
-        limit: Optional[int] = None,
+        limit: Optional[int] = 100,
     ) -> Any:
         """Get order book depth."""
         return self._public_get("/fapi/v1/depth", {
@@ -104,35 +104,31 @@ class FuturesClient(BaseClient):
         self,
         volume: float,
         contract_name: str,
+        order_unit: Literal[1, 2, 3], # 1 coin, 2 contract, 3 notional value
+        position_type: Literal[1, 2], # 1 Cross Margin, 2 Isolated Margin
         type: Literal["LIMIT", "MARKET"],
         side: Literal["BUY", "SELL"],
         open: Literal["OPEN", "CLOSE"],
         price: Optional[float] = None,
-        position_type: Literal[1, 2] = 1,  # 1 Cross Margin, 2 Isolated Margin
+        leverage: Optional[int, float] = None,
         client_order_id: Optional[str] = None, # length < 32
         time_in_force: Optional[Literal["IOC", "FOK", "POST_ONLY", None]] = None,
-        order_unit: int = 1,
     ) -> Any:
         """Create a futures order."""
+        if leverage:
+            self.edit_lever(
+                contract_name=contract_name,
+                leverage=leverage,
+            )
         return self._private_post("/fapi/v1/order", {
-            "positionType":1,
-            "side":"BUY",
-            "volume":0.1,
-            "open":"OPEN",
-            "type":"MARKET",
-            "orderUnit":1,
-            "contractName":"S-BTC-USDT"
-        })
-
-        return self._private_post("/fapi/v1/order", {
-            "positionType" : position_type,
-            "side" : side,
             "volume" : volume,
-            "open" : open,
-            "type" : type,
-            "orderUnit" : order_unit,
             "price" : price,
+            "orderUnit" : order_unit,
             "contractName" : contract_name,
+            "type" : type,
+            "side" : side,
+            "open" : open,
+            "positionType" : position_type,
             "clientOrderId" : client_order_id,
             "timeInForce" : time_in_force,
         })
@@ -141,25 +137,51 @@ class FuturesClient(BaseClient):
         self,
         volume: float,
         contract_name: str,
+        order_unit: Literal[1, 2, 3], # 1 coin, 2 contract, 3 notional value
+        position_type: Literal[1, 2],  # 1 Cross Margin, 2 Isolated Margin
         type: Literal["LIMIT", "MARKET"],
         side: Literal["BUY", "SELL"],
         open: Literal["OPEN", "CLOSE"],
-        triggerType: Literal["LIMIT", "MARKET"],
-        triggerPrice: float,
+        trigger_type: Literal["LIMIT", "MARKET"],
+        trigger_price: float,
         price: Optional[float] = None,
-        position_type: Literal[1, 2] = 1,  # 1 Cross Margin, 2 Isolated Margin
+        leverage: Optional[int, float] = None,
         client_order_id: Optional[str] = None, # length < 32
     ) -> Any:
         """Create a conditional futures order."""
-        return self._private_post("/fapi/v1/conditionOrder", body)
+        if leverage:
+            self.edit_lever(
+                contract_name=contract_name,
+                leverage=leverage,
+            )
+        return self._private_post("/fapi/v1/conditionOrder", {
+            "volume" : volume,
+            "price" : price,
+            "orderUnit" : order_unit,
+            "contractName" : contract_name,
+            "type" : type,
+            "side" : side,
+            "open" : open,
+            "positionType" : position_type,
+            "clientOrderId" : client_order_id,
+            "triggerType" : trigger_type,
+            "triggerPrice" : trigger_price,
+        })
 
-    def cancel_order(self, body: Dict[str, Any]) -> Any:
+    def cancel_order(
+        self,
+        contract_name: str,
+        order_id: Optional[str] = None,
+    ) -> Any:
         """Cancel a specific order."""
-        return self._private_post("/fapi/v1/cancel", body)
+        return self._private_post("/fapi/v1/cancel", {
+            "contractName" : contract_name,
+            "orderId" : order_id,
+        })
 
-    def cancel_all_orders(self, body: Optional[Dict[str, Any]] = None) -> Any:
+    def cancel_all_orders(self) -> Any:
         """Cancel all orders, optionally filtered by payload parameters."""
-        return self._private_post("/fapi/v1/cancel_all", body or {})
+        return self._private_post("/fapi/v1/cancel_all", {})
 
     def get_order(
         self,
@@ -168,28 +190,50 @@ class FuturesClient(BaseClient):
         client_order_id: Optional[str] = None,
     ) -> Any:
         """Fetch order detail by identifiers."""
-        params = {
+        return self._private_get("/fapi/v1/order", {
             "contractName": contract_name,
             "orderId": order_id,
             "clientOrderId": client_order_id,
-        }
-        return self._private_get("/fapi/v1/order", params)
+        })
 
     def open_orders(
         self,
         contract_name: Optional[str] = None
     ) -> Any:
         """List current open orders."""
-        params = {"contractName": contract_name} if contract_name else None
-        return self._private_get("/fapi/v1/openOrders", params)
+        return self._private_get("/fapi/v1/openOrders", {
+            "contractName": contract_name
+        })
 
-    def order_history(self, body: Optional[Dict[str, Any]] = None) -> Any:
+    def order_history(
+        self,
+        contract_name: str,
+        limit: Optional[int] = None,
+        from_id: Optional[str] = None,
+    ) -> Any:
         """Retrieve historical order records."""
-        return self._private_post("/fapi/v1/orderHistorical", body or {})
+        return self._private_post("/fapi/v1/orderHistorical", {
+            "contractName" : contract_name,
+            "limit" : limit,
+            "fromId" : from_id,
+        })
 
-    def profit_history(self, body: Optional[Dict[str, Any]] = None) -> Any:
+    def profit_history(
+        self,
+        contract_name: str,
+        limit: Optional[int] = None,
+        from_id: Optional[str] = None,
+        start_time: Optional[int] = None,
+        end_time: Optional[int] = None,
+    ) -> Any:
         """Retrieve historical profit records."""
-        return self._private_post("/fapi/v1/profitHistorical", body or {})
+        return self._private_post("/fapi/v1/profitHistorical", {
+            "contractName" : contract_name,
+            "limit" : limit,
+            "fromId" : from_id,
+            "startTime" : start_time,
+            "endTime" : end_time,
+        })
 
     def my_trades(
         self,
@@ -198,29 +242,50 @@ class FuturesClient(BaseClient):
         from_id: Optional[int] = None,
     ) -> Any:
         """Retrieve trade history."""
-        params = {"contractName": contract_name, "limit": limit, "fromId": from_id}
-        return self._private_get("/fapi/v1/myTrades", params)
+        return self._private_get("/fapi/v1/myTrades", {
+            "contractName": contract_name,
+            "limit": limit,
+            "fromId": from_id
+        })
 
-    def edit_user_position_model(self, body: Dict[str, Any]) -> Any:
+    def edit_user_position_model(
+        self,
+        contract_name: Optional[str],
+        position_model: Optional[1, 2] = 1, # 1. Net Position 2. Two-way Position
+    ) -> Any:
         """Switch position mode."""
-        return self._private_post("/fapi/v1/edit_user_position_model", body)
+        return self._private_post("/fapi/v1/edit_user_position_model", {
+            "contractName" : contract_name,
+            "positionModel" : position_model,
+        })
 
-    def edit_user_margin_model(self, body: Dict[str, Any]) -> Any:
+    def edit_user_margin_model(
+        self,
+        contract_name: Optional[str],
+        position_model: Optional[1, 2], # 1. Cross Margin 2. Isolated Margin
+    ) -> Any:
         """Switch margin mode."""
-        return self._private_post("/fapi/v1/edit_user_margin_model", body)
+        return self._private_post("/fapi/v1/edit_user_margin_model", {
+            "contractName" : contract_name,
+            "positionModel" : position_model,
+        })
 
-    def edit_position_margin(self, body: Dict[str, Any]) -> Any:
+    def edit_position_margin(
+        self,
+        position_id: Optional[int],
+        amount: Optional[float],
+    ) -> Any:
         """Adjust position margin."""
         return self._private_post("/fapi/v1/edit_position_margin", body)
 
     def edit_lever(
         self,
         contract_name: str,
-        now_level: int,
+        leverage: int,
     ) -> Any:
         """Change leverage for a contract."""
         return self._private_post("/fapi/v1/edit_lever", {
-            "nowLevel": now_level,
+            "nowLevel": leverage,
             "contractName": contract_name,
         })
 

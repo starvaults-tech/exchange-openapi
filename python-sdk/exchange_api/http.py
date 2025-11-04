@@ -123,8 +123,6 @@ def private_post(
 
     body_str = canonical_json(body)
 
-    print(body_str)
-
     headers = sign_headers(
         "POST",
         request_path,
