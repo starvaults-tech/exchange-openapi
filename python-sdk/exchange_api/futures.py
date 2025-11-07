@@ -186,7 +186,7 @@ class FuturesClient(BaseClient):
     def get_order(
         self,
         contract_name: str,
-        order_id: Optional[str] = None,
+        order_id: Optional[str],
         client_order_id: Optional[str] = None,
     ) -> Any:
         """Fetch order detail by identifiers."""
@@ -276,7 +276,10 @@ class FuturesClient(BaseClient):
         amount: Optional[float],
     ) -> Any:
         """Adjust position margin."""
-        return self._private_post("/fapi/v1/edit_position_margin", body)
+        return self._private_post("/fapi/v1/edit_position_margin", {
+            "positionId" : position_id,
+            "amount" : amount,
+        })
 
     def edit_lever(
         self,
