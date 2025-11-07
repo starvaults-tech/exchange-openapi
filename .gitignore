@@ -29,3 +29,5 @@ python-sdk/.ruff_cache/
 python-sdk/.mypy_cache/
 python-sdk/.coverage
 python-sdk/htmlcov/
+
+**/.ipynb_checkpoints/*
