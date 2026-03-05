@@ -14,11 +14,9 @@
 
 {% tabs %}
 {% tab title="200  連接正常" %}
-
 ```
 {}
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -28,14 +26,12 @@
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```
 {
     "serverTime":1607702400000,
     "timezone":中國標準時間
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -52,7 +48,6 @@
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```json
 [
     {
@@ -79,7 +74,6 @@
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -94,11 +88,11 @@
 | multiplier      | number | `0.5`        | 合約面值                         |
 | multiplierCoin  | string | `BTC`        | 合約面值單位                       |
 | pricePrecision  | number | `4`          | 價格精度                         |
-| minOrderVolume  | number | `10`         | 最小下單量                        |
+| minOrderVolume  | number | `10`         | 最小下單量，單位為"張"                 |
 | minOrderMoney   | number | `10`         | 最小下單金額                       |
-| maxMarketVolume | number | `100000`     | 市價單最大下單數量                    |
+| maxMarketVolume | number | `100000`     | 市價單最大下單數量，單位為"張"             |
 | maxMarketMoney  | number | `100000`     | 市價最大下單金額                     |
-| maxLimitVolume  | number | `100000`     | 限價單最大下單數量                    |
+| maxLimitVolume  | number | `100000`     | 限價單最大下單數量，單位為"張"             |
 | maxValidOrder   | number | `100000`     | 最大有效委托的訂單數量                  |
 | minLever        | number | `5`          | 杠桿最小倍數                       |
 | maxLever        | number | `5`          | 杠桿最大倍數                       |
@@ -128,7 +122,6 @@
 
 {% tabs %}
 {% tab title="200  成功獲取深度信息" %}
-
 ```java
 {
   "bids": [
@@ -153,7 +146,6 @@
   ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -186,7 +178,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200  成功獲取ticker信息" %}
-
 ```java
 {
     "high": "9279.0301",
@@ -197,20 +188,19 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     "time": 1595563624731
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 #### Response:
 
-| 名稱   | 類型     | 例子              | 描述  |
-| ---- | ------ | --------------- | --- |
-| time | long   | `1595563624731` | 時間戳 |
-| high | float  | `9900`          | 最高價 |
-| low  | float  | `8800.34`       | 最低價 |
-| last | float  | `8900`          | 最新價 |
-| vol  | float  | `4999`          | 交易量 |
-| rose | string | +0.5            | 漲跌幅 |
+| 名稱   | 類型      | 例子              | 描述  |
+| ---- | ------- | --------------- | --- |
+| time | long    | `1595563624731` | 時間戳 |
+| high | float   | `9900`          | 最高價 |
+| low  | float   | `8800.34`       | 最低價 |
+| last | float   | `8900`          | 最新價 |
+| vol  | integer | `4999`          | 交易量 |
+| rose | string  | +0.5            | 漲跌幅 |
 
 ## 所有行情ticker
 
@@ -218,7 +208,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200  成功獲取ticker信息" %}
-
 ```json
 {"e_btcusdt":{"high": "9279.0301",
     "vol": "1302",
@@ -235,20 +224,19 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     "time": 1595563624731
 }}
 ```
-
 {% endtab %}
 {% endtabs %}
 
 #### Response:
 
-| 名稱   | 類型     | 例子              | 描述  |   |
-| ---- | ------ | --------------- | --- | - |
-| time | long   | `1595563624731` | 時間戳 |   |
-| high | float  | `9900`          | 最高價 |   |
-| low  | float  | `8800.34`       | 最低價 |   |
-| last | float  | `8900`          | 最新價 |   |
-| vol  | float  | `4999`          | 交易量 |   |
-| rose | string | +0.5            | 漲跌幅 |   |
+| 名稱   | 類型      | 例子              | 描述  |   |
+| ---- | ------- | --------------- | --- | - |
+| time | long    | `1595563624731` | 時間戳 |   |
+| high | float   | `9900`          | 最高價 |   |
+| low  | float   | `8800.34`       | 最低價 |   |
+| last | float   | `8900`          | 最新價 |   |
+| vol  | integer | `4999`          | 交易量 |   |
+| rose | string  | +0.5            | 漲跌幅 |   |
 
 ## 獲取指數/標記價格
 
@@ -259,11 +247,10 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 | Name         | Type   | Description       |
 | ------------ | ------ | ----------------- |
 | contractName | string | 合約名稱 如 E-BTC-USDT |
-| limit        | string | 默認100; 最大1000     |
+| limit        | string | 默認100; 最大500      |
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 {
     "markPrice": 581.5,
@@ -273,7 +260,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     "time": 1608273554063
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -300,7 +286,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 [
     {
@@ -329,7 +314,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -358,35 +342,35 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 #### Headers
 
-| Name        | Type   | Description |
-| ----------- | ------ | ----------- |
-| X-CH-TS     | string | 時間戳         |
-| X-CH-APIKEY | string | 您的API-KEY   |
-| X-CH-SIGN   | string | 簽名          |
+| Name            | Type   | Description |
+| --------------- | ------ | ----------- |
+| X-CH-TS         | string | 時間戳         |
+| X-CH-APIKEY     | string | 您的API-KEY   |
+| X-CH-SIGN       | string | 簽名          |
+| futures-version | string | 版本號：`101`   |
 
 #### Request Body
 
-| Name          | Type   | Description           |
-| ------------- | ------ | --------------------- |
-| volume        | number | 下單數量                  |
-| price         | number | 下單價格                  |
-| contractName  | string | 合約名稱 如 `E-BTC-USDT`   |
-| type          | string | 訂單類型, `LIMIT/MARKET`  |
-| side          | string | 買賣方向, `BUY/SELL`      |
-| open          | string | 開平倉方向, `OPEN/CLOSE`   |
-| positionType  | number | 持倉類型, `1全倉/2逐倉`       |
-| clientOrderId | string | 客戶端下單標識, 長度小於32位的字符串  |
-| timeInForce   | string | `IOC, FOK, POST_ONLY` |
+| Name          | Type   | Description                                                                                   |
+| ------------- | ------ | --------------------------------------------------------------------------------------------- |
+| volume        | number | 下單數量                                                                                          |
+| price         | number | 下單價格                                                                                          |
+| orderUnit     | number | <p>訂單單位</p><p><code>1</code>（幣），<code>2</code>（張），<code>3</code>（價值） 默認單位為：<code>2</code></p> |
+| contractName  | string | 合約名稱 如 `E-BTC-USDT`                                                                           |
+| type          | string | 訂單類型, `LIMIT/MARKET`                                                                          |
+| side          | string | 買賣方向, `BUY/SELL`                                                                              |
+| open          | string | 開平倉方向, `OPEN/CLOSE`                                                                           |
+| positionType  | number | 持倉類型, `1全倉/2逐倉`                                                                               |
+| clientOrderId | string | 客戶端下單標識, 長度小於32位的字符串                                                                          |
+| timeInForce   | string | `IOC, FOK, POST_ONLY`                                                                         |
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 {
     "orderId": 256609229205684228
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -402,36 +386,36 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 #### Headers
 
-| Name        | Type   | Description |
-| ----------- | ------ | ----------- |
-| X-CH-TS     | string | 時間戳         |
-| X-CH-APIKEY | string | 您的API-KEY   |
-| X-CH-SIGN   | string | 簽名          |
+| Name            | Type   | Description |
+| --------------- | ------ | ----------- |
+| X-CH-TS         | string | 時間戳         |
+| X-CH-APIKEY     | string | 您的API-KEY   |
+| X-CH-SIGN       | string | 簽名          |
+| futures-version | string | 版本號：`101`   |
 
 #### Request Body
 
-| Name          | Type   | Description          |
-| ------------- | ------ | -------------------- |
-| volume        | number | 下單數量                 |
-| price         | number | 下單價格                 |
-| contractName  | string | 合約名稱 如 `E-BTC-USDT`  |
-| type          | string | 訂單類型, `LIMIT/MARKET` |
-| side          | string | 買賣方向, `BUY/SELL`     |
-| open          | string | 開平倉方向, `OPEN/CLOSE`  |
-| positionType  | number | 持倉類型, `1全倉/2逐倉`      |
-| clientOrderId | string | 客戶端下單標識, 長度小於32位的字符串 |
-| triggerType   | string | 條件單類型，`3追漲/4殺跌`      |
-| triggerPrice  | string | 觸發價                  |
+| Name          | Type   | Description                                                                                   |
+| ------------- | ------ | --------------------------------------------------------------------------------------------- |
+| volume        | number | 下單數量                                                                                          |
+| price         | number | 下單價格                                                                                          |
+| orderUnit     | number | <p>訂單單位</p><p><code>1</code>（幣），<code>2</code>（張），<code>3</code>（價值） 默認單位為：<code>2</code></p> |
+| contractName  | string | 合約名稱 如 `E-BTC-USDT`                                                                           |
+| type          | string | 訂單類型, `LIMIT/MARKET`                                                                          |
+| side          | string | 買賣方向, `BUY/SELL`                                                                              |
+| open          | string | 開平倉方向, `OPEN/CLOSE`                                                                           |
+| positionType  | number | 持倉類型, `1全倉/2逐倉`                                                                               |
+| clientOrderId | string | 客戶端下單標識, 長度小於32位的字符串                                                                          |
+| triggerType   | string | 條件單類型，`3追漲/4殺跌`                                                                               |
+| triggerPrice  | string | 觸發價                                                                                           |
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 {
     "orderId": 256609229205684228
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -456,13 +440,11 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 {
     "orderId": 256609229205684228
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -482,7 +464,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 : OK 成功code為0，code小於0為錯誤，msg為錯誤原因" %}
-
 ```json
 { 
     "code": "0", 
@@ -490,7 +471,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -508,7 +488,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```
 [
     {
@@ -522,31 +501,35 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
        "action": "OPEN",
        "contractName": "E-BTC-USDT",
        "type": "LIMIT",
-       "status": "INIT"
+       "status": "INIT",
+       "tradeFee": 2.0000000,
+       "realizedAmount": 3.000000000
     }
 ]
 
 
-```
 
+```
 {% endtab %}
 {% endtabs %}
 
 #### Response:
 
-| 名稱             | 類型     | 例子                   | 描述                                                                                                    |
-| -------------- | ------ | -------------------- | ----------------------------------------------------------------------------------------------------- |
-| `orderId`      | long   | `150695552109032492` | 訂單ID（系統生成                                                                                             |
-| `contractName` | string | `E-BTC-USDT`         | 合約名稱                                                                                                  |
-| `price`        | float  | `10.5`               | 委托價格                                                                                                  |
-| `origQty`      | float  | `10.5`               | 委托數量                                                                                                  |
-| `executedQty`  | float  | `20`                 | 委托數量                                                                                                  |
-| `avgPrice`     | float  | `10.5`               | 成交均價                                                                                                  |
-| `symbol`       | string | `BHTUSDT`            | 幣對名稱                                                                                                  |
-| `status`       | string | `NEW`                | 訂單狀態。可能出現的值為：`NEW`(新訂單，無成交)、`PARTIALLY_FILLED`（部分成交）、`FILLED`（全部成交）、`CANCELED`（已取消）和`REJECTED`（訂單被拒絕） |
-| `side`         | string | `NEW`                | 訂單方向。可能出現的值只能為：BUY（買入做多） 和 SELL（賣出做空）                                                                 |
-| `action`       | string | `OPEN`               | `OPEN/CLOSE`                                                                                          |
-| `transactTime` | long   | `1607702400000`      | 訂單創建時間                                                                                                |
+| 名稱               | 類型     | 例子                   | 描述                                                                                                    |
+| ---------------- | ------ | -------------------- | ----------------------------------------------------------------------------------------------------- |
+| `orderId`        | long   | `150695552109032492` | 訂單ID（系統生成)                                                                                            |
+| `contractName`   | string | `E-BTC-USDT`         | 合約名稱                                                                                                  |
+| `price`          | float  | `10.5`               | 委托價格                                                                                                  |
+| `origQty`        | float  | `10.5`               | 委托數量                                                                                                  |
+| `executedQty`    | float  | `20`                 | 委托數量                                                                                                  |
+| `avgPrice`       | float  | `10.5`               | 成交均價                                                                                                  |
+| `symbol`         | string | `BHTUSDT`            | 幣對名稱                                                                                                  |
+| `status`         | string | `NEW`                | 訂單狀態。可能出現的值為：`NEW`(新訂單，無成交)、`PARTIALLY_FILLED`（部分成交）、`FILLED`（全部成交）、`CANCELED`（已取消）和`REJECTED`（訂單被拒絕） |
+| `side`           | string | `NEW`                | 訂單方向。可能出現的值只能為：BUY（買入做多） 和 SELL（賣出做空）                                                                 |
+| `action`         | string | `OPEN`               | `OPEN/CLOSE`                                                                                          |
+| `transactTime`   | long   | `1607702400000`      | 訂單創建時間                                                                                                |
+| `tradeFee`       | float  | 2.7                  | 訂單手續費                                                                                                 |
+| `realizedAmount` | float  | 10.6                 | 訂單已實現盈虧                                                                                               |
 
 ## 當前訂單
 
@@ -571,7 +554,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 [
     {
@@ -590,7 +572,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 ]
 
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -624,15 +605,14 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 #### Request Body
 
-| Name         | Type   | Description         |
-| ------------ | ------ | ------------------- |
-| contractName | string | 合約名稱 `E-BTC-USDT`   |
-| limit        | string | 分頁條數, 默認100; 最大1000 |
-| fromId       | long   | 從這條記錄開始檢索           |
+| Name         | Type   | Description        |
+| ------------ | ------ | ------------------ |
+| contractName | string | 合約名稱 `E-BTC-USDT`  |
+| limit        | string | 分頁條數, 默認100; 最大500 |
+| fromId       | long   | 從這條記錄開始檢索          |
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
     {
@@ -660,7 +640,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -678,15 +657,18 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 #### Request Body
 
-| Name         | Type   | Description         |
-| ------------ | ------ | ------------------- |
-| contractName | string | 合約名稱 `E-BTC-USDT`   |
-| limit        | string | 分頁條數, 默認100; 最大1000 |
-| fromId       | long   | 從這條記錄開始檢索           |
+| Name         | Type   | Description                                                      |
+| ------------ | ------ | ---------------------------------------------------------------- |
+| contractName | string | 合約名稱 `E-BTC-USDT`                                                |
+| limit        | string | 分頁條數, 默認100; 最大1000                                              |
+| fromId       | long   | 從這條記錄開始檢索                                                        |
+| startTime    | long   | 時間戳(ms):1735721190000                                            |
+| endTime      | long   | <p>時間戳(ms):1735721190000<br>startTime和endTime必須同時提供，默認查詢所有時間</p> |
+
+
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
     {
@@ -710,7 +692,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -720,11 +701,11 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 #### Query Parameters
 
-| Name         | Type   | Description         |
-| ------------ | ------ | ------------------- |
-| contractName | string | 合約名稱 如 E-BTC-USDT   |
-| limit        | string | 分頁條數, 默認100; 最大1000 |
-| fromId       | long   | 從這個tradeId開始檢索      |
+| Name         | Type   | Description        |
+| ------------ | ------ | ------------------ |
+| contractName | string | 合約名稱 如 E-BTC-USDT  |
+| limit        | string | 分頁條數, 默認100; 最大500 |
+| fromId       | long   | 從這個tradeId開始檢索     |
 
 #### Headers
 
@@ -736,7 +717,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 [
   {
@@ -753,7 +733,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
   },...
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -798,7 +777,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 : OK 成功code為0，code小於0為錯誤，msg為錯誤原因" %}
-
 ```java
 { 
     "code": "0", 
@@ -806,7 +784,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -831,7 +808,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 : OK 成功code為0，code小於0為錯誤，msg為錯誤原因" %}
-
 ```java
 { 
     "code": "0", 
@@ -839,7 +815,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -864,7 +839,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 : OK 成功code為0，code小於0為錯誤，msg為錯誤原因" %}
-
 ```java
 { 
     "code": "0", 
@@ -872,7 +846,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -897,7 +870,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200 : OK 成功code為0，code小於0為錯誤，msg為錯誤原因" %}
-
 ```java
 { 
     "code": "0", 
@@ -905,7 +877,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -929,7 +900,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 {% tabs %}
 {% tab title="200  獲取賬戶信息成功" %}
-
 ```java
 {
     "account": [
@@ -995,7 +965,6 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
     ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -1040,14 +1009,14 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 | uid                   | integer | 10023 | 用戶ID                     |
 | positionType          | integer | 1     | 持倉類型(1 全倉，2 倉逐)          |
 | side                  | string  | SELL  | 持倉方向 BUY 多倉, SELL 空倉     |
-| volume                | float   | 1.05  | 持倉數量                     |
+| volume                | integer | 1     | 持倉數量                     |
 | openPrice             | float   | 1.05  | 開倉價格                     |
 | avgPrice              | float   | 1.05  | 持倉均價                     |
 | closePrice            | float   | 1.05  | 平倉均價                     |
-| leverageLevel         | float   | 1.05  | 杠桿倍數                     |
+| leverageLevel         | integer | 1     | 杠桿倍數                     |
 | holdAmount            | float   | 1.05  | 持倉保證金                    |
-| closeVolume           | float   | 1.05  | 已平倉數量                    |
-| pendingCloseVolume    | float   | 1.05  | 已掛出平倉單的數量                |
+| closeVolume           | integer | 1     | 已平倉數量                    |
+| pendingCloseVolume    | integer | 1     | 已掛出平倉單的數量                |
 | realizedAmount        | float   | 1.05  | 已實現盈虧                    |
 | historyRealizedAmount | float   | 1.05  | 歷史累計已實現盈虧                |
 | tradeFee              | float   | 1.05  | 交易手續費                    |
@@ -1069,3 +1038,44 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 | indexPrice            | float   | 1.05  | 最新標記價格                   |
 | keepRate              | float   | 1.05  | 階梯最低維持保證金率               |
 | maxFeeRate            | float   | 1.05  | 平倉最大手續費率                 |
+
+
+
+## 賬戶流水信息
+
+<mark style="color:blue;">`POST`</mark> `https://futuresopenapi.xxx.com/fapi/v1/get_user_transaction`
+
+| Name        | Type    | Description |
+| ----------- | ------- | ----------- |
+| X-CH-SIGN   | string  | 簽名          |
+| X-CH-APIKEY | string  | 您的API-key   |
+| X-CH-TS     | integer | 時間戳         |
+
+**Request Body**
+
+| Name                                            | Type    | Description                                                                                                                                                                                                                                                                   |
+| ----------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| beginTime<mark style="color:$danger;">\*</mark> | string  | <p>必要參數 開始時間<br>傳入時間戳</p>                                                                                                                                                                                                                                                    |
+| endTime<mark style="color:$danger;">\*</mark>   | string  | <p>必要參數 結束時間<br>傳入時間戳</p>                                                                                                                                                                                                                                                    |
+| symbol<mark style="color:$danger;">\*</mark>    | string  | <p>必須參數，查詢流水的保證金類型<br><code>USDT</code>、<code>EXUSD</code>、<code>DOGE</code></p>                                                                                                                                                                                             |
+| page                                            | integer | 當前頁，默認為1                                                                                                                                                                                                                                                                      |
+| limit                                           | integer | 每頁顯示數據數量，默認200，最大200                                                                                                                                                                                                                                                          |
+| assetType                                       |         | <p>查詢賬號類型<br>默認為0：主賬號<br>1：帶單子賬號<br>2：跟單子賬號</p>                                                                                                                                                                                                                            |
+| langKey                                         | string  | <p>返回數據的語言類型<br>默認為:英語 en_US</p>                                                                                                                                                                                                                                             |
+| type                                            | string  | <p>不傳改參數默認查詢全部流水場景<br>"1:轉入","2:轉出","3:結算多倉","4:結算空倉","5:資金費用","6:開倉手續費","7:平倉手續費", "8:分攤","9:手續費分成","10:贈金發放","11:贈金回收","12:公私轉賬","13:平倉盈虧","18:申請KOL劃轉","19:帶單減少餘額","20:帶單添加餘額","21:跟單減少餘額","22:跟單添加餘額","23:帶單轉入","24:帶單轉出","25:跟單轉入","26:跟單轉出","27:分潤","28:商戶風險準備金分成"</p> |
+
+#### Response:
+
+| Name              | Type   | Description                                                                                                                                                                                                                                                                  |
+| ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                | number | 流水ID                                                                                                                                                                                                                                                                         |
+| contractOtherName | String | 合約別名                                                                                                                                                                                                                                                                         |
+| ctimeMillis       | number | 流水產生時間戳                                                                                                                                                                                                                                                                      |
+| type              | String | <p>目前支持查詢的流水類型：</p><p>"1:轉入","2:轉出","3:結算多倉","4:結算空倉","5:資金費用","6:開倉手續費","7:平倉手續費", "8:分攤","9:手續費分成","10:贈金發放","11:贈金回收","12:公私轉賬","13:平倉盈虧","18:申請KOL劃轉","19:帶單減少餘額","20:帶單添加餘額","21:跟單減少餘額","22:跟單添加餘額","23:帶單轉入","24:帶單轉出","25:跟單轉入","26:跟單轉出","27:分潤","28:商戶風險準備金分成"</p> |
+| ctime             | String | 流水產生時間                                                                                                                                                                                                                                                                       |
+| amount            | number | 流水金額                                                                                                                                                                                                                                                                         |
+| afterBalance      | number | 劃轉資金後賬戶餘額                                                                                                                                                                                                                                                                    |
+| scene             | number | 流水場景對應的id                                                                                                                                                                                                                                                                    |
+| page              | number | 當前頁                                                                                                                                                                                                                                                                          |
+| limit             | number | 每頁數據數量                                                                                                                                                                                                                                                                       |
+| count             | number | 流水條數                                                                                                                                                                                                                                                                         |

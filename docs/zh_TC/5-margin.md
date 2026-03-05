@@ -23,7 +23,6 @@
 | Name             | Type   | Description           |
 | ---------------- | ------ | --------------------- |
 | type             | String | 訂單類型, `LIMIT/MARKET`  |
-| recwwindow       | String | 時間窗口                  |
 | price            | number | 訂單價格, 對於`LIMIT`訂單必須發送 |
 | newClientOrderId | String | 客戶端訂單標識,不能超過32位       |
 | side             | String | 訂單方向, `BUY/SELL`      |
@@ -32,7 +31,6 @@
 
 {% tabs %}
 {% tab title="200: OK  發送杠桿訂單成功" %}
-
 ```javascript
 {
     'symbol': 'LXTUSDT', 
@@ -47,11 +45,12 @@
     'side': 'SELL'
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 **權重(IP/UID): 5**
+
+
 
 ## 杠桿訂單查詢
 
@@ -75,7 +74,6 @@
 
 {% tabs %}
 {% tab title="200: OK  查詢杠桿訂單成功" %}
-
 ```javascript
 {
     'orderId': '499890200602846976', 
@@ -91,11 +89,12 @@
     'transactTime': '1574327555669'
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 **權重(IP/UID): 5**
+
+
 
 ## 撤銷杠桿訂單
 
@@ -119,7 +118,6 @@
 
 {% tabs %}
 {% tab title="200: OK  發送杠桿訂單成功" %}
-
 ```javascript
 {
     'symbol': 'LXTUSDT', 
@@ -134,11 +132,12 @@
     'side': 'SELL'
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 **權重(IP/UID): 5**
+
+
 
 ## 杠桿當前委托
 
@@ -163,7 +162,6 @@
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
     {
@@ -180,11 +178,12 @@
         },...
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
 **權重(IP/UID): 1**
+
+
 
 ## 杠桿交易記錄
 
@@ -208,7 +207,6 @@
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
   {
@@ -226,7 +224,6 @@
   },...
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
