@@ -1,46 +1,45 @@
-# WebSocket推送-合约订单仓位
+# WebSocket推送-合約訂單倉位
 
 ## 目录
 
-* 一.Token连接
-  * 1.请求路径：
-  * 2.请求头
-  * 3.发送消息体
-* 二.Apikey连接
-  * 1.请求路径：
-  * 2.请求头
-  * 3.发送消息体
-* 三.接收消息体
-  * 1.当仓位和账户发生变化时
-  * 2当用户持有仓位时
-  * 3当系统关闭时
-  * 4普通委托
-  * 5计划委托返回数据
+* 一.Token連接
+  * 1.請求路徑：
+  * 2.請求頭
+  * 3.發送消息體
+* 二.Apikey連接
+  * 1.請求路徑：
+  * 2.請求頭
+  * 3.發送消息體
+* 三.接收消息體
+  * 1.當倉位和賬戶發生變化時
+  * 2.當用戶持有倉位時
+  * 3.當系統關閉時
+  * 4.普通委托
+  * 5.計劃委托返回數據
 * 四.心跳
 
-接口支持两种方式连接，一种是token连接，一种是apikey连接。
+接口支持兩種方式連接，一種是token連接，一種是apikey連接。\
+不論哪種方式連接訂閱，返回的數據消息體是一樣的。
 
-不论哪种方式连接订阅，返回的数据消息体是一样的。
+## 一.Token連接
 
-## 一.Token连接
+概述：請求頭中攜帶token，與後端建立連接，建立連接後發送消息進行訂閱，訂閱成功後，才能接收到推送的消息。
 
-概述：请求头中携带token，与后端建立连接，建立连接后发送消息进行订阅，订阅成功后，才能接收到推送的消息。
+### 1.請求路徑：
 
-### 1.请求路径：
+wss://futuresws.xxx.xxx/position\_order/ws
 
-wss\://futuresws.xxx.xxx/position\_order/ws
+將xxx替換為自己的域名
 
-将xxx替换为自己的域名
+### 2.請求頭
 
-### 2.请求头
-
-| 参数名称  | 类型     | 是否必须 | 说明          |
+| 參數名稱  | 類型     | 是否必須 | 說明          |
 | ----- | ------ | ---- | ----------- |
-| token | string | 是    | 登录后生成的token |
+| token | string | 是    | 登錄後生成的token |
 
-### 3.发送消息体
+### 3.發送消息體
 
-| 参数名称   | 类型      | 是否必须 | 说明                            |
+| 參數名稱   | 類型      | 是否必須 | 說明                            |
 | ------ | ------- | ---- | ----------------------------- |
 | event  | string  | 是    | <p>sub：订阅消息<br>unsub：取消订阅</p> |
 | token  | string  | 是    | 登录后生成的token                   |
@@ -62,7 +61,7 @@ wss\://futuresws.xxx.xxx/position\_order/ws
 
 ### 1.请求路径：
 
-wss\://futuresws.xxx.xxx/position\_order/ws
+wss://futuresws.xxx.xxx/position\_order/ws
 
 将xxx替换为自己的域名
 
@@ -100,7 +99,7 @@ wss\://futuresws.xxx.xxx/position\_order/ws
 
 正式消息的消息体是GZIP压缩后的二进制数据，需要解析后才能正常展示数据，解析工具根据自己的语言自己实现即可。
 
-这里提供一个在线的参考工具：<https://www.bejson.com/encrypt/gzip/#google_vignette>
+这里提供一个在线的参考工具：[https://www.bejson.com/encrypt/gzip/#google\_vignette](https://www.bejson.com/encrypt/gzip/#google_vignette)
 
 例如，接收到的二进制的Base64数据为：
 
