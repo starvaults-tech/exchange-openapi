@@ -1,6 +1,6 @@
-# Summary
+# Table of contents
 
-* [OpenApi 基本信息](1-openapi-basic-information.md)
+* [OpenApi 基本信息](README.md)
 * [更新日志](2-changelog.md)
 * [ENUM](3-enum.md)
 * [幣幣交易](4-spot.md)
