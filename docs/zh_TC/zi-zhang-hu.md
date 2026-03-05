@@ -248,7 +248,7 @@
 
 ### 資產劃轉
 
-**母帳戶劃轉到子帳戶 / 子帳戶劃轉到母帳戶 (現貨帳戶)**
+**母劃轉到子 / 子劃轉到母(幣幣帳戶)**
 
 <mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/asset/root_transfer`
 
