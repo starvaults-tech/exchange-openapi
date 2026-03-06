@@ -8,7 +8,7 @@
 
 ## 測試連接
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/ping`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/ping`
 
 測試REST API的連通性
 
@@ -22,7 +22,7 @@
 
 ## 獲取服務器時間
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/time`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/time`
 
 {% tabs %}
 {% tab title="200 " %}
@@ -44,7 +44,7 @@
 
 ## 合約列表
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/contracts`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/contracts`
 
 {% tabs %}
 {% tab title="200 " %}
@@ -109,7 +109,7 @@
 
 ## 訂單薄
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/depth`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/depth`
 
 市場訂單薄深度信息
 
@@ -166,7 +166,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 行情ticker
 
-<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.xxx.xx/fapi/v1/ticker`
+<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.star-vaults.com/fapi/v1/ticker`
 
 24小時價格變化數據
 
@@ -204,7 +204,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 所有行情ticker
 
-<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.xxx.xx/fapi/v1/ticker_all`
+<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.star-vaults.com/fapi/v1/ticker_all`
 
 {% tabs %}
 {% tab title="200  成功獲取ticker信息" %}
@@ -240,7 +240,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 獲取指數/標記價格
 
-<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.xxx.xx/fapi/v1/index`
+<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.star-vaults.com/fapi/v1/index`
 
 #### Query Parameters
 
@@ -274,7 +274,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## K線/蠟燭圖數據
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/klines`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/klines`
 
 #### Query Parameters
 
@@ -336,7 +336,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 創建訂單
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/order`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/order`
 
 創建單個新訂單
 
@@ -382,7 +382,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 創建條件單
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/conditionOrder`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/conditionOrder`
 
 #### Headers
 
@@ -421,7 +421,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 取消訂單
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/cancel`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/cancel`
 
 #### Headers
 
@@ -450,7 +450,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 取消全部訂單
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/cancel_all`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/cancel_all`
 
 #### Headers
 
@@ -476,7 +476,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 訂單詳情
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/order`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/order`
 
 #### Query Parameters
 
@@ -533,7 +533,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 當前訂單
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/openOrders`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/openOrders`
 
 **限速規則:**\
 **獲取當前合約, 該用戶的當前委托**
@@ -593,7 +593,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 歷史委托
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/orderHistorical`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/orderHistorical`
 
 #### Headers
 
@@ -645,7 +645,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 盈虧記錄
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/profitHistorical`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/profitHistorical`
 
 #### Headers
 
@@ -697,7 +697,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 交易記錄
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/myTrades`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/myTrades`
 
 #### Query Parameters
 
@@ -758,7 +758,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 更改持倉模式
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/edit_user_position_model`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/edit_user_position_model`
 
 #### Headers
 
@@ -789,7 +789,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 更改保證金模式
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/edit_user_margin_model`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/edit_user_margin_model`
 
 #### Headers
 
@@ -820,7 +820,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 調整倉位保證金
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/edit_position_margin`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/edit_position_margin`
 
 #### Headers
 
@@ -851,7 +851,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 更改杠桿倍數
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/edit_lever`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/edit_lever`
 
 #### Headers
 
@@ -888,7 +888,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 賬戶信息
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.com/fapi/v1/account`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/account`
 
 #### Headers
 
@@ -1043,7 +1043,7 @@ bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應
 
 ## 賬戶流水信息
 
-<mark style="color:blue;">`POST`</mark> `https://futuresopenapi.xxx.com/fapi/v1/get_user_transaction`
+<mark style="color:blue;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/get_user_transaction`
 
 | Name        | Type    | Description |
 | ----------- | ------- | ----------- |

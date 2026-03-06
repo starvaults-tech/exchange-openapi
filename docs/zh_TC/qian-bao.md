@@ -4,7 +4,7 @@
 
 ### 萬向劃轉
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/asset/universal_transfer`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/asset/universal_transfer`
 
 **Headers**
 
@@ -38,7 +38,7 @@
 
 ### 萬向劃轉記錄查詢
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/asset/universal_transfer_query`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/asset/universal_transfer_query`
 
 **Headers**
 
@@ -118,7 +118,7 @@
 
 ### 查詢充值歷史
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/deposit/his_list`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/deposit/his_list`
 
 **Headers**
 
@@ -203,7 +203,7 @@
 
 ### 查詢充值地址
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/deposit/query_address`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/deposit/query_address`
 
 **Headers**
 
@@ -287,7 +287,7 @@
 
 ### 查詢提現地址
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/withdraw/address/query`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/withdraw/address/query`
 
 **Headers**
 
@@ -406,7 +406,7 @@
 
 ### 查詢用戶可劃轉資產
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/asset/account/by_type`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/asset/account/by_type`
 
 **Headers**
 
@@ -506,7 +506,7 @@
 
 ### 查詢用戶幣幣帳戶資產
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/asset/exchange/account`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/asset/exchange/account`
 
 **Headers**
 

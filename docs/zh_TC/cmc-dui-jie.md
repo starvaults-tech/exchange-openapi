@@ -2,7 +2,7 @@
 
 #### 24h摘要
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/summary`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/v2/pub/summary`
 
 **請求參數**
 
@@ -88,7 +88,7 @@
 
 #### 幣種列表
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/asset`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/v2/pub/asset`
 
 **請求參數**
 
@@ -142,7 +142,7 @@
 
 #### 幣對行情
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/ticker`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/v2/pub/ticker`
 
 **請求參數**
 
@@ -193,7 +193,7 @@
 
 #### 盤口數據
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/orderbook`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/v2/pub/orderbook`
 
 **請求參數**
 
@@ -248,7 +248,7 @@
 
 #### 交易列表
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/trades`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/v2/pub/trades`
 
 **請求參數**
 
@@ -296,5 +296,3 @@
 ```
 {% endtab %}
 {% endtabs %}
-
-\{% endtab %\} \{% endtabs %\}

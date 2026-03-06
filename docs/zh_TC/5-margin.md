@@ -8,7 +8,7 @@
 
 ## 創建杠桿訂單
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/margin/order`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/order`
 
 #### Headers
 
@@ -54,7 +54,7 @@
 
 ## 杠桿訂單查詢
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v1/margin/order`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/order`
 
 #### Query Parameters
 
@@ -98,7 +98,7 @@
 
 ## 撤銷杠桿訂單
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/margin/cancel`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/cancel`
 
 #### Headers
 
@@ -141,7 +141,7 @@
 
 ## 杠桿當前委托
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v1/margin/openOrders`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/openOrders`
 
 **權重(IP/UID): 5**
 
@@ -187,7 +187,7 @@
 
 ## 杠桿交易記錄
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v1/margin/myTrades`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/myTrades`
 
 #### Query Parameters
 

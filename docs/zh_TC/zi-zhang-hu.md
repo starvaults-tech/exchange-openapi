@@ -6,7 +6,7 @@
 
 **獲取母帳戶下所有開啟的子帳戶**
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/sub_user/get_sub_user_List`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/sub_user/get_sub_user_List`
 
 **Headers**
 
@@ -85,7 +85,7 @@
 
 **為您的母帳戶生成一個虛擬子帳戶**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/create_sub_user`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/create_sub_user`
 
 **Headers**
 
@@ -108,7 +108,7 @@
 
 **為子帳戶開通/關閉**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/update_trade_status`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/update_trade_status`
 
 **Headers**
 
@@ -138,7 +138,7 @@
 
 **查詢子帳戶 API Key IP 白名單**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/sub_account_api/list`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/sub_account_api/list`
 
 | Name        | Type   | Description |
 | ----------- | ------ | ----------- |
@@ -192,7 +192,7 @@
 
 **為子帳戶 API Key 設置 IP 白名單**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/sub_account_api/update_ip`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/sub_account_api/update_ip`
 
 **Headers**
 
@@ -222,7 +222,7 @@
 
 **刪除子帳戶 API Key**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/sub_account_api/delete`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/sub_account_api/delete`
 
 **Headers**
 
@@ -250,7 +250,7 @@
 
 **母劃轉到子 / 子劃轉到母(幣幣帳戶)**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/asset/root_transfer`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/asset/root_transfer`
 
 **Headers**
 
@@ -280,7 +280,7 @@
 
 **母劃轉到子 / 子劃轉到母劃轉記錄**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/asset/root_transfer_query`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/asset/root_transfer_query`
 
 **Headers**
 
@@ -349,7 +349,7 @@
 
 **子賬戶自己兩個不同賬戶劃轉**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/asset/transfer`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/asset/transfer`
 
 **Headers**
 
@@ -384,7 +384,7 @@
 
 **子賬戶自己兩個不同賬戶劃轉記錄**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/asset/transfer_query`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/asset/transfer_query`
 
 **Headers**
 
@@ -460,7 +460,7 @@
 
 **查詢子帳戶資產**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/sub_user/asset/account`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/sub_user/asset/account`
 
 **Headers**
 
@@ -531,7 +531,7 @@
 
 **向母帳戶劃轉**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/asset/subaccount/transfer`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/asset/subaccount/transfer`
 
 **Headers**
 
@@ -557,7 +557,7 @@
 
 **查詢與母帳戶的劃轉記錄**
 
-<mark style="color:green;">`POST`</mark>`https://openapi.xxx.xx/sapi/v1/asset/subaccount/transfer_query`
+<mark style="color:green;">`POST`</mark>`https://openapi.star-vaults.com/sapi/v1/asset/subaccount/transfer_query`
 
 **Headers**
 

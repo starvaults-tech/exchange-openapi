@@ -1,6 +1,6 @@
 # Coingecko對接
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/pub/coingecko/tickers`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/pub/coingecko/tickers`
 
 **請求參數**
 
@@ -56,7 +56,7 @@
 
 #### 盤口數據
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/pub/coingecko/orderbook`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/pub/coingecko/orderbook`
 
 **請求參數**
 
@@ -105,7 +105,7 @@
 
 #### 合約產品資訊及類型
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/pub/coingecko/contracts`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/pub/coingecko/contracts`
 
 **請求參數**
 
@@ -146,7 +146,7 @@
 **請求示例**
 
 ```
-https://futuresopenapi.xxx.xx/pub/coingecko/contracts
+https://futuresopenapi.star-vaults.com/pub/coingecko/contracts
 ```
 
 **響應示例**
@@ -212,7 +212,7 @@ https://futuresopenapi.xxx.xx/pub/coingecko/contracts
 
 #### 合約訂單簿深度詳情
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/pub/coingecko/orderbook`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/pub/coingecko/orderbook`
 
 **請求參數**
 
@@ -233,7 +233,7 @@ https://futuresopenapi.xxx.xx/pub/coingecko/contracts
 **請求示例**
 
 ```
-https://futuresopenapi.xxx.xx/pub/coingecko/orderbook?ticker_id=E-BTC-USDT&dept=100
+https://futuresopenapi.star-vaults.com/pub/coingecko/orderbook?ticker_id=E-BTC-USDT&dept=100
 ```
 
 **響應示例**

@@ -27,7 +27,7 @@
 
 ### 1.請求路徑：
 
-wss://futuresws.xxx.xxx/position\_order/ws
+wss://futuresws.star-vaults.com/position\_order/ws
 
 將xxx替換為自己的域名
 
@@ -61,7 +61,7 @@ wss://futuresws.xxx.xxx/position\_order/ws
 
 ### 1.請求路徑：
 
-wss://futuresws.xxx.xxx/position\_order/ws
+wss://futuresws.star-vaults.com/position\_order/ws
 
 將 xxx 替換為自己的域名
 

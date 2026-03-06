@@ -2,7 +2,7 @@
 
 ## 發起提現
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/withdraw/apply`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/withdraw/apply`
 
 #### Headers
 
@@ -40,7 +40,7 @@
 
 ## 提現記錄查詢
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/withdraw/query`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/withdraw/query`
 
 #### Headers
 

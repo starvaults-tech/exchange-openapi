@@ -16,7 +16,7 @@ OkHttpClient client = new OkHttpClient().newBuilder()
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}");
 Request request = new Request.Builder()
-  .url("https://openapi.xxx.com")
+  .url("https://openapi.star-vaults.com.com")
   .method("POST", body)
   .addHeader("X-CH-APIKEY", "Your API key")
   .addHeader("X-CH-TS", "1596543296058")
@@ -40,7 +40,7 @@ import (
 
 func main() {
 
-  url := "https://openapi.xxx.com"
+  url := "https://openapi.star-vaults.com.com"
   method := "POST"
 
   payload := strings.NewReader("{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}")
@@ -70,7 +70,7 @@ func main() {
 ```python
 import requests
 
-url = "https://openapi.xxx.com"
+url = "https://openapi.star-vaults.com.com"
 
 payload = "{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}"
 headers = {
@@ -91,7 +91,7 @@ print(response.text.encode('utf8'))
 <?php
 require_once 'HTTP/Request2.php';
 $request = new HTTP_Request2();
-$request->setUrl('https://openapi.xxx.com');
+$request->setUrl('https://openapi.star-vaults.com.com');
 $request->setMethod(HTTP_Request2::METHOD_POST);
 $request->setConfig(array(
   'follow_redirects' => TRUE
@@ -124,7 +124,7 @@ catch(HTTP_Request2_Exception $e) {
 var request = require('request');
 var options = {
   'method': 'POST',
-  'url': 'https://openapi.xxx.com',
+  'url': 'https://openapi.star-vaults.com.com',
   'headers': {
     'X-CH-APIKEY': 'Your API key',
     'X-CH-TS': '1596543881257',
