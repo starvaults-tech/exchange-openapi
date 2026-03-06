@@ -1,6 +1,6 @@
 # WebSocket推送-合約訂單倉位
 
-## 目录
+### 目錄
 
 * 一.Token連接
   * 1.請求路徑：
@@ -11,11 +11,11 @@
   * 2.請求頭
   * 3.發送消息體
 * 三.接收消息體
-  * 1.當倉位和賬戶發生變化時
+  * 1.當倉位和帳戶發生變化時
   * 2.當用戶持有倉位時
   * 3.當系統關閉時
-  * 4.普通委托
-  * 5.計劃委托返回數據
+  * 4.普通委託
+  * 5.計劃委託返回數據
 * 四.心跳
 
 接口支持兩種方式連接，一種是token連接，一種是apikey連接。\
@@ -41,9 +41,9 @@ wss://futuresws.xxx.xxx/position\_order/ws
 
 | 參數名稱   | 類型      | 是否必須 | 說明                            |
 | ------ | ------- | ---- | ----------------------------- |
-| event  | string  | 是    | <p>sub：订阅消息<br>unsub：取消订阅</p> |
-| token  | string  | 是    | 登录后生成的token                   |
-| broker | Integer | 是    | SaaS商户ID                      |
+| event  | string  | 是    | <p>sub：訂閱消息<br>unsub：取消訂閱</p> |
+| token  | string  | 是    | 登入後生成的 token                  |
+| broker | Integer | 是    | SaaS 商戶 ID                    |
 
 例子：
 
@@ -55,29 +55,29 @@ wss://futuresws.xxx.xxx/position\_order/ws
 }
 ```
 
-## 二.Apikey连接
+## 二.Apikey連接
 
-概述：请求头中携带api-key，与后端建立连接，建立连接后发送消息进行订阅，订阅成功后，才能接收到推送的消息。
+概述：請求頭中攜帶 api-key，與後端建立連接，建立連接後發送消息進行訂閱，訂閱成功後，才能接收到推送的消息。
 
-### 1.请求路径：
+### 1.請求路徑：
 
 wss://futuresws.xxx.xxx/position\_order/ws
 
-将xxx替换为自己的域名
+將 xxx 替換為自己的域名
 
-### 2.请求头
+### 2.請求頭
 
-| 参数名称    | 类型     | 是否必须 | 说明        |
-| ------- | ------ | ---- | --------- |
-| api-key | string | 是    | 用户的Apikey |
+| 參數名稱    | 類型     | 是否必須 | 說明         |
+| ------- | ------ | ---- | ---------- |
+| api-key | string | 是    | 用戶的 Apikey |
 
-### 3.发送消息体
+### 3.發送消息體
 
-| 参数名称   | 类型      | 是否必须 | 说明                            |
+| 參數名稱   | 類型      | 是否必須 | 說明                            |
 | ------ | ------- | ---- | ----------------------------- |
-| event  | string  | 是    | <p>sub：订阅消息<br>unsub：取消订阅</p> |
-| apiKey | string  | 是    | 登录后生成的token                   |
-| broker | Integer | 是    | SaaS商户ID                      |
+| event  | string  | 是    | <p>sub：訂閱消息<br>unsub：取消訂閱</p> |
+| apiKey | string  | 是    | 登入後生成的 token                  |
+| broker | Integer | 是    | SaaS 商戶 ID                    |
 
 例子：
 
@@ -89,19 +89,19 @@ wss://futuresws.xxx.xxx/position\_order/ws
 }
 ```
 
-## 三.接收消息体
+## 三.接收消息體
 
-建立连接成功后，后端返回提示：connect success
+建立連接成功後，後端返回提示：connect success
 
-订阅成功后，后端返回提示：sub success
+訂閱成功後，後端返回提示：sub success
 
 ![](https://3090275533-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FldIEUBhG9c2o7BFGqB0s%2Fuploads%2Fgit-blob-dee6f3cb7369846cedd45e9efb152f671bd0febb%2Fimage_zkKOk6nA5c.png?alt=media)
 
-正式消息的消息体是GZIP压缩后的二进制数据，需要解析后才能正常展示数据，解析工具根据自己的语言自己实现即可。
+正式消息的消息體是 GZIP 壓縮後的二進位數據，需要解析後才能正常顯示數據，解析工具根據自己的語言自己實現即可。
 
-这里提供一个在线的参考工具：[https://www.bejson.com/encrypt/gzip/#google\_vignette](https://www.bejson.com/encrypt/gzip/#google_vignette)
+這裡提供一個線上的參考工具：[https://www.bejson.com/encrypt/gzip/#google\_vignette](https://www.bejson.com/encrypt/gzip/#google_vignette)
 
-例如，接收到的二进制的Base64数据为：
+例如，接收到的二進位 Base64 數據為：
 
 ```
 H4sIAAAAAAAAAD2NywrCQAxF/yXrYchMkpmkO1EXggtxKyL1AQpapdZV6b87rWB2l3vuSQ+f2xkqymyiDk7Xumkud6hgtlgfNtvVfAkOSt718GihQo+olKKlGCIGplDaDiqVHNSzg2s9QSVpNGVGKlfEdXFEB+OvqEQsycH7OQ3RPDnoXj9L9hh0HJGZSSSL6OD4J4ujnUhG8crZiJIEwZQkpWE/fAGMewQM0AAAAA==
@@ -133,91 +133,91 @@ H4sIAAAAAAAAAD2NywrCQAxF/yXrYchMkpmkO1EXggtxKyL1AQpapdZV6b87rWB2l3vuSQ+f2xkqymyi
 
 ![](https://3090275533-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FldIEUBhG9c2o7BFGqB0s%2Fuploads%2Fgit-blob-7ecd3964a426ea84a9a4c44b8496609bd887f40c%2Fimage_hOakX3HDyH.png?alt=media)
 
-消息字段说明：
+消息欄位說明：
 
-#### 1.当仓位和账户发生变化时
+#### 1.當倉位和帳戶發生變化時
 
 ```json
 {
-    "channel": "ACCOUNT_UPDATE",// channel：不同的事件类型，当仓位和账户发生变化时推送ACCOUNT_UPDATE事件
-    "uid":1001, // 合约用户ID
-    "t": "1564745798938", // 时间戳
-    "d": { // 数据
+    "channel": "ACCOUNT_UPDATE",// channel：不同的事件類型，當倉位和帳戶發生變化時推送 ACCOUNT_UPDATE 事件
+    "uid":1001, // 合約用戶 ID
+    "t": "1564745798938", // 時間戳
+    "d": { // 數據
         "et": "CREATE",// UPDATE、DELETE、DEFAULT
-        // CREATE :新增一个仓位，此时p不为空，且返回仓位的全部数据
-        // DELETE :删除一个仓位，此时p不为空，且只返回仓位id
-        // UPDATE :更新一个仓位，此时p不为空，且只返回发生变化的字段
-        // DEFAULT:仓位不变，只有账户信息发生了变化，此时p为空
-        "a": [ // 账户列表
+        // CREATE :新增一個倉位，此時 p 不為空，且返回倉位的全部數據
+        // DELETE :刪除一個倉位，此時 p 不為空，且只返回倉位 id
+        // UPDATE :更新一個倉位，此時 p 不為空，且只返回發生變化的欄位
+        // DEFAULT:倉位不變，只有帳戶資訊發生了變化，此時 p 為空
+        "a": [ // 帳戶列表
             {
-                "c": "USDT",  // 币种名称 
-                "an": "122624.12345678", // 账户余额
-                "la": "100.12345678",  // 冻结账号余额
-                "pn": "50.12345678"  // 逐仓保证金账户余额
+                "c": "USDT",  // 幣種名稱
+                "an": "122624.12345678", // 帳戶餘額
+                "la": "100.12345678",  // 凍結帳戶餘額
+                "pn": "50.12345678"  // 逐倉保證金帳戶餘額
             },{
-                "c": "BTC", // 币种
-                "an": "122624.12345678", // 账户余额
-                "la": "100.12345678",  // 冻结账号余额
-                "pn": "50.12345678"  // 逐仓保证金账户余额
+                "c": "BTC", // 幣種
+                "an": "122624.12345678", // 帳戶餘額
+                "la": "100.12345678",  // 凍結帳戶餘額
+                "pn": "50.12345678"  // 逐倉保證金帳戶餘額
             }
         ],
-        "p": {// 仓位信息
-            "id": 90762,  // 仓位ID
-            "cid": 127, // 合约ID
-            "pt": 1,  // 仓位类型：1 全仓，2 逐仓
-            "cn": "S-BTC-USDT", //合约名称
-            "con": "BTCUSDT-EXUSD", //合约别名
-            "l": 20, // 杠杆倍数
-            "pv": 12, // 仓位张数
-            "op": 98533.6, // 持仓均价
-            "rp": 68000.3, // 预估强平价格
-            "hm": 98.22008325596366,  // 逐仓持保证金
-            "ra": 2, // 已实现盈亏
+        "p": {// 倉位資訊
+            "id": 90762,  // 倉位 ID
+            "cid": 127, // 合約 ID
+            "pt": 1,  // 倉位類型：1 全倉，2 逐倉
+            "cn": "S-BTC-USDT", // 合約名稱
+            "con": "BTCUSDT-EXUSD", // 合約別名
+            "l": 20, // 槓桿倍數
+            "pv": 12, // 倉位張數
+            "op": 98533.6, // 持倉均價
+            "rp": 68000.3, // 預估強平價格
+            "hm": 98.22008325596366,  // 逐倉持保證金
+            "ra": 2, // 已實現盈虧
             "s": "BUY", // 多空方向
-            "mr": 0.0847015132701974, // 保证金率
-            "oa": 0.0847015132701974, // 开仓保证金
-            "ccv": 2 //可平张数
+            "mr": 0.0847015132701974, // 保證金率
+            "oa": 0.0847015132701974, // 開倉保證金
+            "ccv": 2 // 可平張數
         }
     }
 }
 ```
 
-#### 2当用户持有仓位时
+#### 2.當用戶持有倉位時
 
 ```json
 {
-    "channel": "ADL_PRICE",//当用户持有仓位时，会推送ADL_PRICE消息，每秒1次
-    "uid":1001, // 合约用户ID
+    "channel": "ADL_PRICE",// 當用戶持有倉位時，會推送 ADL_PRICE 消息，每秒 1 次
+    "uid":1001, // 合約用戶 ID
     "l": [
         {
-            "id": 7001,// 仓位ID
-            "al": 1,  // ADL等级
-            "rp": 68000.3,  // 预估强平价格
-            "ha": 98.22008325596366,  // 保证金
-            "mr": 0.0847015132701974, // 保证金率
-            "bo":79000, // 买一价
-            "so":78000, // 卖一价
-            "lt":78500, // 最新成交价
-            "tp":78000  // 标记价格
+            "id": 7001,// 倉位 ID
+            "al": 1,  // ADL 等級
+            "rp": 68000.3,  // 預估強平價格
+            "ha": 98.22008325596366,  // 保證金
+            "mr": 0.0847015132701974, // 保證金率
+            "bo":79000, // 買一價
+            "so":78000, // 賣一價
+            "lt":78500, // 最新成交價
+            "tp":78000  // 標記價格
         },
         {
-            "id": 7002,// 仓位ID
-            "al": 1,  // ADL等级
-            "rp": 68000.3,  // 预估强平价格
-            "ha": 98.22008325596366,  // 保证金
-            "mr": 0.0847015132701974, // 保证金率
-            "bo":79000, // 买一价
-            "so":78000, // 卖一价
-            "lt":78500, // 最新成交价
-            "tp":78000  // 标记价格
+            "id": 7002,// 倉位 ID
+            "al": 1,  // ADL 等級
+            "rp": 68000.3,  // 預估強平價格
+            "ha": 98.22008325596366,  // 保證金
+            "mr": 0.0847015132701974, // 保證金率
+            "bo":79000, // 買一價
+            "so":78000, // 賣一價
+            "lt":78500, // 最新成交價
+            "tp":78000  // 標記價格
         }
     ]
 }
 ```
 
-#### 3当系统关闭时
+#### 3.當系統關閉時
 
-会固定推送以下数据
+會固定推送以下數據
 
 ```json
 {
@@ -227,7 +227,7 @@ H4sIAAAAAAAAAD2NywrCQAxF/yXrYchMkpmkO1EXggtxKyL1AQpapdZV6b87rWB2l3vuSQ+f2xkqymyi
 }
 ```
 
-#### 4普通委托
+#### 4.普通委託
 
 ```json
 {
@@ -244,6 +244,8 @@ H4sIAAAAAAAAAD2NywrCQAxF/yXrYchMkpmkO1EXggtxKyL1AQpapdZV6b87rWB2l3vuSQ+f2xkqymyi
         "dealVolume": 0,
         "volume": 100,
         "avgPrice": 0,
+        "tradeFee": 3.2,
+        "realizedAmount": 10.6,
         "otoOrder": {
             "takerProfitStatus": false,
             "takerProfitTrigger": 61001,
@@ -254,12 +256,12 @@ H4sIAAAAAAAAAD2NywrCQAxF/yXrYchMkpmkO1EXggtxKyL1AQpapdZV6b87rWB2l3vuSQ+f2xkqymyi
             "stopLossPrice": 0,
             "stopLossTriggerId": null
         },
-        "orderAction": "1"// 1新增 2取消 3委托变更
+        "orderAction": "1"// 1 新增 2 取消 3 委託變更（部分成交、完全成交等）
     }
 }
 ```
 
-#### 5**计划委托返回数据**
+#### 5.計劃委託返回數據
 
 ```json
 {
@@ -274,15 +276,15 @@ H4sIAAAAAAAAAD2NywrCQAxF/yXrYchMkpmkO1EXggtxKyL1AQpapdZV6b87rWB2l3vuSQ+f2xkqymyi
         "triggerType": 3,
         "ctime": 1709550135000,
         "expireTime": 1710759735000,
-        "orderAction": "1"//1新增 2取消 
+        "orderAction": "1"// 1 新增 2 取消
     }
 }
 ```
 
 ## 四.**心跳**
 
-30s ping一次，服务端超过40s没有收到ping就主动断开连接
+每 30 秒 ping 一次，服務端超過 40 秒沒有收到 ping 就主動斷開連接。
 
-参数：{"ping":1713338308232}
+參數：{"ping":1713338308232}
 
-返回 ：{“pong”:1713338308233}
+返回：{"pong":1713338308233}
