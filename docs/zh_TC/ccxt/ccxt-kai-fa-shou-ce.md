@@ -419,5 +419,5 @@ exchange = ccxt.bitwind()
 
 #### 10. 技術文件
 
-* OpenAPI 文件站：[https://exchangedocsv2.gitbook.io/open-api-doc-v2](https://exchangedocsv2.gitbook.io/open-api-doc-v2)
+* OpenAPI 文件站：[https://star-vaults.gitbook.io/exchange-openapi/](https://star-vaults.gitbook.io/exchange-openapi/)
 * CCXT 官方文件：[https://docs.ccxt.com](https://docs.ccxt.com/)
