@@ -481,9 +481,9 @@ exchange = ccxt.bitwind()
 
 **Request Body**
 
-| symbol\* | String | 幣對名稱 E.g. `BTC/USDT` |
-| -------- | ------ | -------------------- |
-| orders   | number | 批量訂單資訊，最多 10 條       |
+| symbol<mark style="color:red;">\*</mark> | String | 幣對名稱 E.g. `BTC/USDT` |
+| ---------------------------------------- | ------ | -------------------- |
+| orders                                   | number | 批量訂單資訊，最多 10 條       |
 
 {% tabs %}
 {% tab title="200: OK" %}
@@ -538,10 +538,10 @@ exchange = ccxt.bitwind()
 
 **Query Parameters**
 
-| orderId\*        | String | 訂單 id                |
-| ---------------- | ------ | -------------------- |
-| newClientOrderId | String | 客戶端訂單標識              |
-| symbol\*         | String | 幣對名稱 E.g. `BTC/USDT` |
+| orderId<mark style="color:red;">\*</mark> | String | 訂單 id                |
+| ----------------------------------------- | ------ | -------------------- |
+| newClientOrderId                          | String | 客戶端訂單標識              |
+| symbol<mark style="color:red;">\*</mark>  | String | 幣對名稱 E.g. `BTC/USDT` |
 
 **Headers**
 
@@ -611,10 +611,10 @@ exchange = ccxt.bitwind()
 
 **Request Body**
 
-| orderId\*        | String | 訂單 id                           |
-| ---------------- | ------ | ------------------------------- |
-| newClientOrderId | String | 客戶端訂單標識                         |
-| symbol\*         | String | 幣對名稱 E.g. `BTCUSDT 或者 BTC/USDT` |
+| orderId<mark style="color:red;">\*</mark> | String | 訂單 id                           |
+| ----------------------------------------- | ------ | ------------------------------- |
+| newClientOrderId                          | String | 客戶端訂單標識                         |
+| symbol<mark style="color:red;">\*</mark>  | String | 幣對名稱 E.g. `BTCUSDT 或者 BTC/USDT` |
 
 {% tabs %}
 {% tab title="200: OK 撤銷訂單成功" %}
