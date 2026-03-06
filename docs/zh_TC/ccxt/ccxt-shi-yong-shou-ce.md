@@ -408,15 +408,15 @@ exchange = ccxt.bitwind()
 
 **Request Body**
 
-| symbol           | String  | 幣對名稱 E.g. `BTC/USDT`                          |
-| ---------------- | ------- | --------------------------------------------- |
-| volume\*         | number  | 訂單數量                                          |
-| side\*           | String  | 訂單方向，`BUY/SELL`                               |
-| type\*           | String  | 訂單類型，`LIMIT/MARKET/FOK/POST_ONLY/IOC/STOP`    |
-| price            | number  | 訂單價格，對於 `LIMIT` 訂單必須發送                        |
-| newClientOrderId | String  | 客戶端訂單標識                                       |
-| recvwindow       | integer | 時間視窗                                          |
-| triggerPrice     | number  | 止盈止損觸發價格（當類型為 STOP 時，price 和 triggerPrice 必填） |
+| symbol                                   | String  | 幣對名稱 E.g. `BTC/USDT`                          |
+| ---------------------------------------- | ------- | --------------------------------------------- |
+| volume<mark style="color:red;">\*</mark> | number  | 訂單數量                                          |
+| side<mark style="color:red;">\*</mark>   | String  | 訂單方向，`BUY/SELL`                               |
+| type<mark style="color:red;">\*</mark>   | String  | 訂單類型，`LIMIT/MARKET/FOK/POST_ONLY/IOC/STOP`    |
+| price                                    | number  | 訂單價格，對於 `LIMIT` 訂單必須發送                        |
+| newClientOrderId                         | String  | 客戶端訂單標識                                       |
+| recvwindow                               | integer | 時間視窗                                          |
+| triggerPrice                             | number  | 止盈止損觸發價格（當類型為 STOP 時，price 和 triggerPrice 必填） |
 
 {% tabs %}
 {% tab title="200: OK" %}
