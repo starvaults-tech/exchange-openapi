@@ -1,7 +1,5 @@
 # 提現
 
-## 提現
-
 ## 發起提現
 
 <mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/withdraw/apply`

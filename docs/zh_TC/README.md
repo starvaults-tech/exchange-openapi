@@ -2,7 +2,7 @@
 
 ## API基本信息
 
-* 本篇列出 REST 接口的 baseurl `https://openapi.xxx.xx`
+* 本篇列出 REST 接口的 baseurl `https://openapi.star-vaults.com`
 * 所有接口都會返回一個 JSON object 或者 array.
 * 響應中如有數組，數組元素以時間倒序排列，越早的數據越提前.
 * 所有時間、時間戳均為 UNIX 時間，單位為毫秒.
