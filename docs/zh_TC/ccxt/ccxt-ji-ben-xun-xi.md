@@ -85,7 +85,7 @@ CCXT 提供了統一的資料結構和介面封裝，讓開發者可以使用一
 
 **六、官方資源**
 
-* OpenAPI 文件站：[https://exchangedocsv2.gitbook.io/open-api-doc-v2](https://exchangedocsv2.gitbook.io/open-api-doc-v2)
+* OpenAPI 文件站：[https://star-vaults.gitbook.io/exchange-openapi](https://star-vaults.gitbook.io/exchange-openapi)
 * CCXT 官方文件：[https://docs.ccxt.com](https://docs.ccxt.com/)
 
 ***
