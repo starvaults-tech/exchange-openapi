@@ -259,20 +259,20 @@ exchange = ccxt.bitwind()
 
 **Response:**
 
-| time      | long   | `1595563624731` | 時間戳         |   |
-| --------- | ------ | --------------- | ----------- | - |
-| high      | float  | `9900`          | 最高價         |   |
-| low       | float  | `8800.34`       | 最低價         |   |
-| open      | float  | `8700`          | 開盤價         |   |
-| last      | float  | `8900`          | 最新價         |   |
-| vol       | float  | `4999`          | 交易量         |   |
-| rose      | float  | 0               | 漲幅          |   |
-| symbol    | String | btcusdt         | 幣對          |   |
-| amount    | String | 1233            | 交易額，計價貨幣成交量 |   |
-| askPrice  | String | 23321           | 賣一價         |   |
-| askVolume | String | 3321            | 賣一數量        |   |
-| bidPrice  | String | 21              | 買一價         |   |
-| bidVolume | String | 12              | 買一數量        |   |
+| time      | long   | `1595563624731` | 時間戳         |
+| --------- | ------ | --------------- | ----------- |
+| high      | float  | `9900`          | 最高價         |
+| low       | float  | `8800.34`       | 最低價         |
+| open      | float  | `8700`          | 開盤價         |
+| last      | float  | `8900`          | 最新價         |
+| vol       | float  | `4999`          | 交易量         |
+| rose      | float  | 0               | 漲幅          |
+| symbol    | String | btcusdt         | 幣對          |
+| amount    | String | 1233            | 交易額，計價貨幣成交量 |
+| askPrice  | String | 23321           | 賣一價         |
+| askVolume | String | 3321            | 賣一數量        |
+| bidPrice  | String | 21              | 買一價         |
+| bidVolume | String | 12              | 買一數量        |
 
 ### 6. 最近成交 public\_get\_trades()
 
@@ -293,10 +293,10 @@ exchange = ccxt.bitwind()
 
 **Query Parameters**
 
-| Name     | Type   | Description          |
-| -------- | ------ | -------------------- |
-| symbol\* | String | 幣對名稱 E.g. `BTC/USDT` |
-| limit    | String | `預設 100；最大 1000`     |
+| Name                                     | Type   | Description          |
+| ---------------------------------------- | ------ | -------------------- |
+| symbol<mark style="color:red;">\*</mark> | String | 幣對名稱 E.g. `BTC/USDT` |
+| limit                                    | String | `預設 100；最大 1000`     |
 
 {% tabs %}
 {% tab title="200: OK 成功" %}
