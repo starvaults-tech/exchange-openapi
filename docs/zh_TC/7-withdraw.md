@@ -16,17 +16,16 @@
 
 #### Request Body
 
-| Name                                              | Type   | Description                                                                         |
-| ------------------------------------------------- | ------ | ----------------------------------------------------------------------------------- |
-| withdrawOrderId<mark style="color:red;">\*</mark> | String | 自定義提現id，保證唯一                                                                        |
-| amount<mark style="color:red;">\*</mark>          | String | 數量                                                                                  |
-| address<mark style="color:red;">\*</mark>         | String | 提幣地址                                                                                |
-| label                                             | String | 某些幣種例如 XRP,XMR 允許填寫次級地址標簽                                                           |
-| symbol                                            | String | 幣種，支持多主鏈的幣需要傳實際的幣種名稱，參照[附錄1](https://openapi-1.gitbook.io/exchange-openapi/fu-lu-1) |
+| Name                                              | Type   | Description                                                                               |
+| ------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------- |
+| withdrawOrderId<mark style="color:red;">\*</mark> | String | 自定義提現id，保證唯一                                                                              |
+| amount<mark style="color:red;">\*</mark>          | String | 數量                                                                                        |
+| address<mark style="color:red;">\*</mark>         | String | 提幣地址                                                                                      |
+| label                                             | String | 某些幣種例如 XRP,XMR 允許填寫次級地址標簽                                                                 |
+| symbol                                            | String | 幣種，支持多主鏈的幣需要傳實際的幣種名稱，參照[附錄1](https://star-vaults.gitbook.io/exchange-openapi/13-appendix) |
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```json
 {
     "code":"Ѳ",//返回碼，0代表成功，其他失敗
@@ -36,7 +35,6 @@
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -56,18 +54,17 @@
 
 #### Request Body
 
-| Name            | Type   | Description                                                                         |
-| --------------- | ------ | ----------------------------------------------------------------------------------- |
-| symbol          | String | 幣種，支持多主鏈的幣需要傳實際的幣種名稱，參照[附錄1](https://openapi-1.gitbook.io/exchange-openapi/fu-lu-1) |
-| withdrawId      | String | 平台提現id                                                                              |
-| withdrawOrderId | String | 自定義提現id                                                                             |
-| startTime       | Number | 開始時間，時間戳，默認90天前                                                                     |
-| endTime         | Number | 結束時間，時間戳，默認當前時間                                                                     |
-| page            | String | 頁碼，從1開始                                                                             |
+| Name            | Type   | Description                                                                               |
+| --------------- | ------ | ----------------------------------------------------------------------------------------- |
+| symbol          | String | 幣種，支持多主鏈的幣需要傳實際的幣種名稱，參照[附錄1](https://star-vaults.gitbook.io/exchange-openapi/13-appendix) |
+| withdrawId      | String | 平台提現id                                                                                    |
+| withdrawOrderId | String | 自定義提現id                                                                                   |
+| startTime       | Number | 開始時間，時間戳，默認90天前                                                                           |
+| endTime         | Number | 結束時間，時間戳，默認當前時間                                                                           |
+| page            | String | 頁碼，從1開始                                                                                   |
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```json
 {
     "code": "0",
@@ -105,7 +102,6 @@
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
