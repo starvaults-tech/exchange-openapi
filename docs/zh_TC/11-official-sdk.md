@@ -1,57 +1,141 @@
-# 錯誤碼
+# SDK開發庫
 
-返回報錯一般由兩個部分組成：錯誤碼和錯誤信息。錯誤碼是通用的，但是錯誤信息會有所不同。如下是一個報錯JSON Payload示例：
+#### Demo 地址
+
+[https://github.com/exchange2021](https://github.com/exchange2021)
+
+#### 下面是建立訂單的範例
+
+簽名規則請參考**簽名示例**
+
+* Java
 
 ```java
-{
-  "code":-1121,
-  "msg":"Invalid symbol."
+OkHttpClient client = new OkHttpClient().newBuilder()
+  .build();
+MediaType mediaType = MediaType.parse("application/json");
+RequestBody body = RequestBody.create(mediaType, "{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}");
+Request request = new Request.Builder()
+  .url("https://openapi.xxx.com")
+  .method("POST", body)
+  .addHeader("X-CH-APIKEY", "Your API key")
+  .addHeader("X-CH-TS", "1596543296058")
+  .addHeader("Content-Type", "application/json")
+  .addHeader("X-CH-SIGN", "encrypt sign")
+  .build();
+Response response = client.newCall(request).execute();
+```
+
+* Go
+
+```go
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://openapi.xxx.com"
+  method := "POST"
+
+  payload := strings.NewReader("{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}")
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("X-CH-APIKEY", "Your API key")
+  req.Header.Add("X-CH-TS", "1596543881257")
+  req.Header.Add("Content-Type", "application/json")
+  req.Header.Add("X-CH-SIGN", "encrypt sign")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
 }
 ```
 
-## 通用服務器和網絡錯誤
+* Python
 
-| code  | 描述                                                                                                               |
-| ----- | ---------------------------------------------------------------------------------------------------------------- |
-| -1000 | 處理請求時發生未知錯誤                                                                                                      |
-| -1001 | 內部錯誤,無法處理您的請求,請再試一次                                                                                              |
-| -1002 | 您無權執行此請求. 請求需要發送API key,我們建議在所有的請求頭附加APIkey                                                                      |
-| -1003 | 請求過於頻繁超過限制                                                                                                       |
-| -1004 | 您無權執行此請求,User not exit Company                                                                                   |
-| -1006 | 接收到了不符合預設格式的消息,下單狀態未知                                                                                            |
-| -1007 | 等待後端服務器響應超時.發送狀態未知,執行狀態未知                                                                                        |
-| -1014 | 不支持的訂單組合                                                                                                         |
-| -1015 | 新訂單太多,請減少你的請求頻率                                                                                                  |
-| -1016 | 服務器下線                                                                                                            |
-| -1017 | 我們建議在所有的請求頭附加Content-Type,並設置成application/json                                                                   |
-| -1020 | 不支持此操作                                                                                                           |
-| -1021 | <p>時延過大，服務器根據接請求中的時間戳判定耗時已經超出了recevWindow。請改善網絡條件或者增大recevWindow<br>時間偏移過大，服務器根據請求中的時間戳判定客戶端時間比服務器時間提前了1秒鐘以上</p> |
-| -1022 | 此請求的簽名無效                                                                                                         |
-| -1023 | 您無權執行此請求, 我們建議您在所有的請求頭附加X-CH-TS                                                                                  |
-| -1024 | 您無權執行此請求, 我們建議您在請求頭附加X-CH-SIGN                                                                                   |
+```python
+import requests
 
-## 請求內容中的問題
+url = "https://openapi.xxx.com"
 
-| code  | 描述                                                                                                                       |
-| ----- | ------------------------------------------------------------------------------------------------------------------------ |
-| -1100 | 在參數中發現非法字符                                                                                                               |
-| -1101 | <ul><li>發送的參數太多。</li></ul><ul><li>檢測到的參數值重覆</li></ul>                                                                    |
-| -1102 | <ul><li>未發送強制性參數，該參數為空/空或格式錯誤。</li></ul><ul><li>強制參數'％s'未發送，為空/空或格式錯誤。</li></ul><ul><li>必須發送參數'％s'或'％s'，但兩者均為空</li></ul> |
-| -1103 | <ul><li>發送了未知參數。</li></ul><ul><li>每條請求需要至少一個參數{Timestamp}</li></ul>                                                      |
-| -1104 | <ul><li>並非所有發送的參數都被讀取。</li></ul><ul><li>並非所有發送的參數都被讀取； 讀取了'％s'參數，但被發送了'％s'</li></ul>                                     |
-| -1105 | <ul><li>參數為空。</li></ul><ul><li>參數'％s'為空。</li></ul>                                                                       |
-| -1106 | <ul><li>不需要時已發送參數。</li></ul><ul><li>不需要時發送參數'％s'。</li></ul>                                                              |
-| -1111 | 精度超過為此資產定義的最大值。                                                                                                          |
-| -1112 | 交易對沒有掛單                                                                                                                  |
-| -1116 | 無效訂單類型。                                                                                                                  |
-| -1117 | 無效買賣方向                                                                                                                   |
-| -1118 | 新的客戶訂單ID為空                                                                                                               |
-| -1121 | 無效的symbol                                                                                                                |
-| -1136 | 訂單quantity小於最小值                                                                                                          |
-| -1138 | 訂單價格超出允許範圍                                                                                                               |
-| -1139 | 該交易對不支持市價交易                                                                                                              |
-| -1145 | 該訂單類型不支持撤銷                                                                                                               |
-| -2013 | Order不存在                                                                                                                 |
-| -2015 | 無效的API密鑰，IP或操作權限                                                                                                         |
-| -2016 | 交易被凍結                                                                                                                    |
-| -2017 | 余額不足                                                                                                                     |
+payload = "{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}"
+headers = {
+  'X-CH-APIKEY': 'Your API key',
+  'X-CH-TS': '1596543881257',
+  'Content-Type': 'application/json',
+  'X-CH-SIGN': 'encrypt sign'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+```
+
+* Php
+
+```php
+<?php
+require_once 'HTTP/Request2.php';
+$request = new HTTP_Request2();
+$request->setUrl('https://openapi.xxx.com');
+$request->setMethod(HTTP_Request2::METHOD_POST);
+$request->setConfig(array(
+  'follow_redirects' => TRUE
+));
+$request->setHeader(array(
+  'X-CH-APIKEY' => 'Your API key',
+  'X-CH-TS' => '1596543881257',
+  'Content-Type' => 'application/json',
+  'X-CH-SIGN' => 'encrypt sign'
+));
+$request->setBody('{"symbol":"BTCUSDT","volume":1,"side":"BUY","type":"LIMIT","price":10000,"newClientOrderId":"","recvWindow":5000}');
+try {
+  $response = $request->send();
+  if ($response->getStatus() == 200) {
+    echo $response->getBody();
+  }
+  else {
+    echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
+    $response->getReasonPhrase();
+  }
+}
+catch(HTTP_Request2_Exception $e) {
+  echo 'Error: ' . $e->getMessage();
+}
+```
+
+* NodeJs
+
+```javascript
+var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://openapi.xxx.com',
+  'headers': {
+    'X-CH-APIKEY': 'Your API key',
+    'X-CH-TS': '1596543881257',
+    'Content-Type': 'application/json',
+    'X-CH-SIGN': 'encrypt sign'
+  },
+  body: JSON.stringify({"symbol":"BTCUSDT","volume":1,"side":"BUY","type":"LIMIT","price":10000,"newClientOrderId":"","recvWindow":5000})
+
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+```
