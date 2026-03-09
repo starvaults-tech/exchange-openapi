@@ -14,7 +14,7 @@ description: 餘額
 
 `wss://ws2.star-vaults.com/spotws_user/userData/ws`
 
-將 `xxx` 替換為你自己的域名。
+
 
 2. 請求頭（Request Header）
 
@@ -45,8 +45,6 @@ description: 餘額
 1. 請求路徑：
 
 `wss://ws2.star-vaults.com/spotws_user/userData/ws`
-
-將 `xxx` 替換為你自己的域名。
 
 2. 請求頭（Request Header）
 

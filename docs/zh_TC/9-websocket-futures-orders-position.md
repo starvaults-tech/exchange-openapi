@@ -29,8 +29,6 @@
 
 wss://futuresws.star-vaults.com/position\_order/ws
 
-將xxx替換為自己的域名
-
 ### 2.請求頭
 
 | 參數名稱  | 類型     | 是否必須 | 說明          |
@@ -62,8 +60,6 @@ wss://futuresws.star-vaults.com/position\_order/ws
 ### 1.請求路徑：
 
 wss://futuresws.star-vaults.com/position\_order/ws
-
-將 xxx 替換為自己的域名
 
 ### 2.請求頭
 

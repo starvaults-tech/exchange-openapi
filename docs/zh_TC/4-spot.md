@@ -41,7 +41,7 @@
 
 市場支持的幣對集合esponse:
 
-名稱類型例子描述timelong`1595563624731`當前時間(Unix Timestamp, 毫秒ms)bidslist如下訂單薄買盤信息askslist如下訂單薄賣盤信息bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應的數量的信息, 由最優價格從上倒下排列名稱類型例子描述' 'float`131.1`價格' 'float`2.3`當前價格對應的數量GEThttps://openapi.xxx.com/sapi/v1/ticker\\
+名稱類型例子描述timelong`1595563624731`當前時間(Unix Timestamp, 毫秒ms)bidslist如下訂單薄買盤信息askslist如下訂單薄賣盤信息bids和asks所對應的信息代表了訂單薄的所有價格以及價格對應的數量的信息, 由最優價格從上倒下排列名稱類型例子描述' 'float`131.1`價格' 'float`2.3`當前價格對應的數量GEThttps://openapi.star-vaults.com/sapi/v1/ticker\\
 
 {% tabs %}
 {% tab title="200: OK " %}

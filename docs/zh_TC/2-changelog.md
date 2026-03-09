@@ -10,7 +10,7 @@ description: 最近更新： 2025-03-28
 
 ## 2025-03-28
 
-`https://openapi.xxx.xx/sapi/v2/symbols`. 返回值添加 "feeRateMaker" "feeRateTaker"
+`https://openapi.star-vaults.com/sapi/v2/symbols`. 返回值添加 "feeRateMaker" "feeRateTaker"
 
 ## 2025-02-12
 
