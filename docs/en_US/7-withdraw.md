@@ -14,13 +14,13 @@
 
 #### Request Body
 
-| Name                                              | Type   | Description                                                                                                                                                                                               |
-| ------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| withdrawOrderId<mark style="color:red;">\*</mark> | String | Custom withdrawal id, guaranteed to be unique                                                                                                                                                             |
-| amount<mark style="color:red;">\*</mark>          | String | quantity                                                                                                                                                                                                  |
-| address<mark style="color:red;">\*</mark>         | String | Withdrawal address                                                                                                                                                                                        |
-| label                                             | String | Some currencies such as XRP, XMR allow filling of secondary address labels                                                                                                                                |
-| symbol                                            | String | currency name，For coins that support multiple mainchains, the actual currency name needs to be transmitted, as shown in [Appendix 1](https://openapi-1.gitbook.io/exchange-openapi/openapi-en/appendix-1) |
+| Name                                              | Type   | Description                                                                                                                                                                                             |
+| ------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| withdrawOrderId<mark style="color:red;">\*</mark> | String | Custom withdrawal id, guaranteed to be unique                                                                                                                                                           |
+| amount<mark style="color:red;">\*</mark>          | String | quantity                                                                                                                                                                                                |
+| address<mark style="color:red;">\*</mark>         | String | Withdrawal address                                                                                                                                                                                      |
+| label                                             | String | Some currencies such as XRP, XMR allow filling of secondary address labels                                                                                                                              |
+| symbol                                            | String | currency name，For coins that support multiple mainchains, the actual currency name needs to be transmitted, as shown in [Appendix 1](https://star-vaults.gitbook.io/exchange-openapi/en_us/13-appendix) |
 
 {% tabs %}
 {% tab title="200: OK " %}
