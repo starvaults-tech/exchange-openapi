@@ -14,13 +14,13 @@
 
 #### Request Body
 
-| Name                                              | Type   | Description                                                                                                                                                                                             |
-| ------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| withdrawOrderId<mark style="color:red;">\*</mark> | String | Custom withdrawal id, guaranteed to be unique                                                                                                                                                           |
-| amount<mark style="color:red;">\*</mark>          | String | quantity                                                                                                                                                                                                |
-| address<mark style="color:red;">\*</mark>         | String | Withdrawal address                                                                                                                                                                                      |
-| label                                             | String | Some currencies such as XRP, XMR allow filling of secondary address labels                                                                                                                              |
-| symbol                                            | String | currency name，For coins that support multiple mainchains, the actual currency name needs to be transmitted, as shown in [Appendix 1](https://star-vaults.gitbook.io/exchange-openapi/en_us/13-appendix) |
+| Name                                              | Type   | Description                                                                                                                                                                                           |
+| ------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| withdrawOrderId<mark style="color:red;">\*</mark> | String | Custom withdrawal id, guaranteed to be unique                                                                                                                                                         |
+| amount<mark style="color:red;">\*</mark>          | String | quantity                                                                                                                                                                                              |
+| address<mark style="color:red;">\*</mark>         | String | Withdrawal address                                                                                                                                                                                    |
+| label                                             | String | Some currencies such as XRP, XMR allow filling of secondary address labels                                                                                                                            |
+| symbol                                            | String | currency name，For coins that support multiple mainchains, the actual currency name needs to be transmitted, as shown in [Appendix](https://star-vaults.gitbook.io/exchange-openapi/en_us/13-appendix) |
 
 {% tabs %}
 {% tab title="200: OK " %}
@@ -40,7 +40,7 @@
 
 ## Withdrawal record query
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/withdraw/query`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/withdraw/query`
 
 #### Headers
 
@@ -52,14 +52,14 @@
 
 #### Request Body
 
-| Name            | Type   | Description                                                                                                                                                                                                |
-| --------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| symbol          | String | Currency Name, For coins that support multiple mainchains, the actual currency name needs to be transmitted, as shown in [Appendix 1](https://openapi-1.gitbook.io/exchange-openapi/openapi-en/appendix-1) |
-| withdrawId      | String | Platform withdrawal id                                                                                                                                                                                     |
-| withdrawOrderId | String | Custom withdrawal id                                                                                                                                                                                       |
-| startTime       | String | Start time, timestamp, default 90 days ago                                                                                                                                                                 |
-| endTime         | String | end time, timestamp, default current time                                                                                                                                                                  |
-| page            | String | Page number, starting at 1                                                                                                                                                                                 |
+| Name            | Type   | Description                                                                                                                                                                                            |
+| --------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| symbol          | String | Currency Name, For coins that support multiple mainchains, the actual currency name needs to be transmitted, as shown in [Appendix](https://star-vaults.gitbook.io/exchange-openapi/en_us/13-appendix) |
+| withdrawId      | String | Platform withdrawal id                                                                                                                                                                                 |
+| withdrawOrderId | String | Custom withdrawal id                                                                                                                                                                                   |
+| startTime       | String | Start time, timestamp, default 90 days ago                                                                                                                                                             |
+| endTime         | String | end time, timestamp, default current time                                                                                                                                                              |
+| page            | String | Page number, starting at 1                                                                                                                                                                             |
 
 {% tabs %}
 {% tab title="200: OK " %}
