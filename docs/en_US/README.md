@@ -2,7 +2,7 @@
 
 ## API Basic Information
 
-* baseurl `https://openapi.xxx.xx`
+* baseurl `https://openapi.star-vaults.com`
 * All endpoints return either a JSON object or array.
 * Data is returned in **Reverse** order. newest first, oldest last.
 * All time and timestamp related fields are in milliseconds.

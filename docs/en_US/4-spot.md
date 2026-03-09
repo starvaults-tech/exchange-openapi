@@ -2,51 +2,45 @@
 
 ## Public
 
-Security: [None](https://github.com/exhcange/gitbook-en-new/blob/master/broken-reference/README.md)
+Security: None
 
 ### Test Connectivity
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/ping`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/ping`
 
 This endpoint checks connectivity to the host
 
 {% tabs %}
 {% tab title="200: OK  Connection normal" %}
-
 ```javascript
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### Check Server Time
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/time`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/time`
 
 This endpoint checks connectivity to the server and retrieves server timestamp
 
 {% tabs %}
 {% tab title="200: OK  Successfully retrieved server time" %}
-
 ```javascript
 {
     "timezone": "GMT+08:00",
     "serverTime": 1595563624731
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### Pairs List
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/symbols`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/symbols`
 
 {% tabs %}
 {% tab title="200: OK " %}
-
-````javascript
 ```json
 {
     "symbols": [
@@ -113,41 +107,39 @@ This endpoint checks connectivity to the server and retrieves server timestamp
     ]
 }
 ```
-````
-
 {% endtab %}
 {% endtabs %}
 
 **weight(IP/UID): 1**
 
-#### Response: <a href="#bi-dui-lie-biao" id="bi-dui-lie-biao"></a>
+**Response:**
 
-| symbol            | string  | `BTCUSDT` | Name of the symbol                      |   | Currency to name  |
-| ----------------- | ------- | --------- | --------------------------------------- | - | ----------------- |
-| baseAsset         | string  | `BTC`     | Underlying asset for the symbol         |   | base currency     |
-| quoteAsset        | string  | `USDT`    | Quote asset for the symbol              |   | The base currency |
-| pricePrecision    | integer | `2`       | Precision of the price                  |   | Price Accuracy    |
-| quantityPrecision | integer | `6`       | Precision of the quantity               |   | Quantity accuracy |
-| limitAmountMin    | String  | 100       | Limit order minimum order amount quote  |   |                   |
-| limitPriceMin     | String  | 100       | Minimum price of a limit order          |   |                   |
-| limitVolumeMin    | String  | 100       | Limit order minimum order quantity base |   |                   |
-| baseAssetName     | String  | BTC       | Base Currency Display Name              |   |                   |
-| quoteAssetName    | String  | USDT      | Quote Currency Display Name             |   |                   |
-| SymbolName        | String  | BTC/USDT  | Trading Pair Display Name               |   |                   |
-| feeRateMaker      | String  | 0.002     | Maker Procedure rate                    |   |                   |
-| feeRateTaker      | String  | 0.002     | Taker Procedure rate                    |   |                   |
+| symbol            | string  | `BTCUSDT` | Name of the symbol                      | Currency to name  |
+| ----------------- | ------- | --------- | --------------------------------------- | ----------------- |
+| baseAsset         | string  | `BTC`     | Underlying asset for the symbol         | base currency     |
+| quoteAsset        | string  | `USDT`    | Quote asset for the symbol              | The base currency |
+| pricePrecision    | integer | `2`       | Precision of the price                  | Price Accuracy    |
+| quantityPrecision | integer | `6`       | Precision of the quantity               | Quantity accuracy |
+| limitAmountMin    | String  | 100       | Limit order minimum order amount quote  |                   |
+| limitPriceMin     | String  | 100       | Minimum price of a limit order          |                   |
+| limitVolumeMin    | String  | 100       | Limit order minimum order quantity base |                   |
+| baseAssetName     | String  | BTC       | Base Currency Display Name              |                   |
+| quoteAssetName    | String  | USDT      | Quote Currency Display Name             |                   |
+| SymbolName        | String  | BTC/USDT  | Trading Pair Display Name               |                   |
+| feeRateMaker      | String  | 0.002     | Maker Procedure rate                    |                   |
+| feeRateTaker      | String  | 0.002     | Taker Procedure rate                    |                   |
 
-## Market
+### Market
 
-Security Type: [None](https://github.com/exhcange/gitbook-en-new/blob/master/broken-reference/README.md)
+Security Type: None
 
-### Depth
+#### Depth
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/depth`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/depth`
 
 market detpth data
 
-#### Query Parameters
+**Query Parameters**
 
 | Name                                     | Type    | Description               |
 | ---------------------------------------- | ------- | ------------------------- |
@@ -156,7 +148,6 @@ market detpth data
 
 {% tabs %}
 {% tab title="200: OK  Successfully retrieved market depth data" %}
-
 ```javascript
 {
   "bids": [
@@ -181,13 +172,12 @@ market detpth data
   ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 **weight(IP/UID): 5**
 
-#### Response: <a href="#bi-dui-lie-biao" id="bi-dui-lie-biao"></a>
+**Response:**
 
 | time | long | `1595563624731` | Current timestamp (ms)                                          |
 | ---- | ---- | --------------- | --------------------------------------------------------------- |
@@ -196,31 +186,26 @@ market detpth data
 
 The fields bids and asks are lists of order book price level entries, sorted from best to worst.
 
-| ' ' | float | `131.1` | price level                                       |
-| --- | ----- | ------- | ------------------------------------------------- |
-| ' ' | float | `2.3`   | The total quantity of orders for this price level |
+#### 24hrs ticker
 
-### 24hrs ticker
-
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/ticker`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/ticker`
 
 24 hour price change statistics.
 
 * If `symbol` parameter is not provided, the API will consume a significantly higher rate limit, and the response structure will also be different.
 * If the symbol is not sent, orders for all symbols will be returned in an array.
 
-#### Query Parameters
+#### **Query Parameters**
 
 ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If neither is provided, ticker data for all symbols will be returned.
 
 | Name    | Type   | Description                                                                          |
 | ------- | ------ | ------------------------------------------------------------------------------------ |
 | symbol  | String | Symbol Name E.g. BTC/USDT                                                            |
-| symbols | String | ***Coin pair name**: Use English commas to separate multiple pairs. btcusdt,ethusdt* |
+| symbols | String | _**Coin pair name**: Use English commas to separate multiple pairs. btcusdt,ethusdt_ |
 
 {% tabs %}
 {% tab title="200: OK  Successfully retrieved ticker data" %}
-
 ```javascript
 {
     "high": "9279.0301",
@@ -237,13 +222,11 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
     "bidVolume": "213213"
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
 {% tab title="200: OK  Successfully retrieve ticker information without passing symbol." %}
-
 ```javascript
 [
     {
@@ -275,7 +258,6 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -310,7 +292,7 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 
 ### Recent Trades List
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/trades`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/trades`
 
 #### Query Parameters
 
@@ -321,20 +303,20 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 {
     "list":[
         {
-            "price":"3.00000100",
-            "qty":"11.00000000",
-            "time":1499865549590,
-            "side":"BUY"
-        }
+						"price": "3.000001",
+						"qty": "11.0",
+						"time": 1499865549590,
+						"side": "BUY",
+						"id": 629861,
+						"symbol": "BTC/USDT"
+				}
     ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -342,25 +324,26 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 
 #### Response:
 
-<table data-header-hidden><thead><tr><th width="150">name</th><th>type</th><th>example</th><th>description</th><th></th></tr></thead><tbody><tr><td>price</td><td>float</td><td><code>0.055</code></td><td>The price of the trade</td><td></td></tr><tr><td>time</td><td>long</td><td><code>1537797044116</code></td><td>Current timestamp (ms)</td><td></td></tr><tr><td>qty</td><td>float</td><td><code>5</code></td><td>The quantity traded</td><td></td></tr><tr><td>side</td><td>string</td><td><code>BUY/SELL</code></td><td>Taker side</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="150">name</th><th>type</th><th>example</th><th>description</th></tr></thead><tbody><tr><td>price</td><td>float</td><td><code>0.055</code></td><td>The price of the trade</td></tr><tr><td>time</td><td>long</td><td><code>1537797044116</code></td><td>Current timestamp (ms)</td></tr><tr><td>qty</td><td>float</td><td><code>5</code></td><td>The quantity traded</td></tr><tr><td>side</td><td>string</td><td><code>BUY/SELL</code></td><td>Taker side</td></tr><tr><td>id</td><td>long</td><td><code>629861</code></td><td>Transaction id</td></tr><tr><td>symbol</td><td>string</td><td><code>BTC/USDT</code></td><td>Currency pair</td></tr></tbody></table>
 
 ### Kline/candlestick data
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/klines`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/klines`
 
 #### Query Parameters
 
-| Name                                       | Type   | Description                                                                                                                                                                                                      |
-| ------------------------------------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| symbol<mark style="color:red;">\*</mark>   |        | Symbol Name E.g. BTC/USDT                                                                                                                                                                                        |
-| interval<mark style="color:red;">\*</mark> | String | <p>Interval of the Kline. Possible values include: <code>1min</code>,<code>5min</code>,<code>15min</code>,<code>30min</code>,<code>60min</code>,<code>1day</code>,<code>1week</code>,<code>1month</code><br></p> |
-| Default 100; Max 300                       | String | Default 100; Max 300Responses200                                                                                                                                                                                 |
-| startTime                                  | long   | startTime example:`1538728740000`                                                                                                                                                                                |
-| endTime                                    | long   | endTime example:`1538728740000`                                                                                                                                                                                  |
+| Name                                       | Type    | Description                                                                                                                                                                                                      |
+| ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| symbol<mark style="color:red;">\*</mark>   |         | Symbol Name E.g. BTC/USDT                                                                                                                                                                                        |
+| interval<mark style="color:red;">\*</mark> | String  | <p>Interval of the Kline. Possible values include: <code>1min</code>,<code>5min</code>,<code>15min</code>,<code>30min</code>,<code>60min</code>,<code>1day</code>,<code>1week</code>,<code>1month</code><br></p> |
+| Default 100; Max 300                       | String  | Default 100; Max 300Responses200                                                                                                                                                                                 |
+| startTime                                  | long    | startTime example:`1538728740000`                                                                                                                                                                                |
+| endTime                                    | long    | endTime example:`1538728740000`                                                                                                                                                                                  |
+| timezone                                   | String  | Time zone, eg:UTC-09                                                                                                                                                                                             |
+| limit                                      | integer | Returns the number of k-lines                                                                                                                                                                                    |
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
     {
@@ -389,7 +372,6 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -397,17 +379,17 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 
 #### Response:
 
-<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th><th></th></tr></thead><tbody><tr><td><code>idx</code></td><td>long</td><td><code>1538728740000</code></td><td>Open time</td><td></td></tr><tr><td>open</td><td>float</td><td><code>36.00000</code></td><td>open price</td><td></td></tr><tr><td>close</td><td>float</td><td><code>33.00000</code></td><td>close price</td><td></td></tr><tr><td>high</td><td>float</td><td><code>36.00000</code></td><td>high price</td><td></td></tr><tr><td>low</td><td>float</td><td><code>30.00000</code></td><td>low price</td><td></td></tr><tr><td>vol</td><td>float</td><td><code>2456.111</code></td><td>volume</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th></tr></thead><tbody><tr><td><code>idx</code></td><td>long</td><td><code>1538728740000</code></td><td>Open time</td></tr><tr><td>open</td><td>float</td><td><code>36.00000</code></td><td>open price</td></tr><tr><td>close</td><td>float</td><td><code>33.00000</code></td><td>close price</td></tr><tr><td>high</td><td>float</td><td><code>36.00000</code></td><td>high price</td></tr><tr><td>low</td><td>float</td><td><code>30.00000</code></td><td>low price</td></tr><tr><td>vol</td><td>float</td><td><code>2456.111</code></td><td>volume</td></tr></tbody></table>
 
 ## Trade
 
-### Security Type: [TRADE](https://github.com/exhcange/gitbook-en-new/blob/master/broken-reference/README.md)
+### Security Type: TRADE
 
 Endpoints under **Trade** require an API Key and a signature
 
 ### New Order
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v2/order`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v2/order`
 
 **Rate Limit: 100times/2s**
 
@@ -434,7 +416,6 @@ Endpoints under **Trade** require an API Key and a signature
 
 {% tabs %}
 {% tab title="200: OK  Successfully post new order" %}
-
 ```javascript
 {
     'symbol': 'LXTUSDT', 
@@ -450,7 +431,6 @@ Endpoints under **Trade** require an API Key and a signature
     'side': 'SELL'
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -458,11 +438,11 @@ Endpoints under **Trade** require an API Key and a signature
 
 #### Response:
 
-<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th><th></th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>ID of the order</td><td></td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>A unique ID of the order.</td><td></td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Symbol Name</td><td></td></tr><tr><td>symbolName</td><td>string</td><td>BTC/USDT</td><td>Currency display name: Either <strong>symbol</strong> or <strong>symbolName</strong> must be provided.<br>Example: BTC/USDT</td><td></td></tr><tr><td>transactTime</td><td>integer</td><td><code>1273774892913</code></td><td>Time the order is placed</td><td></td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Time the order is placed</td><td></td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Quantity ordered</td><td></td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Quantity of orders that has been executed</td><td></td></tr><tr><td>type</td><td>string</td><td><code>LIMIT</code></td><td>Order type <code>LIMIT,MARKET</code></td><td></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>Order side：<code>BUY, SELL</code></td><td></td></tr><tr><td>status</td><td>string</td><td><code>0</code></td><td>0 = new order</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>ID of the order</td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>A unique ID of the order.</td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Symbol Name</td></tr><tr><td>symbolName</td><td>string</td><td>BTC/USDT</td><td>Currency display name: Either <strong>symbol</strong> or <strong>symbolName</strong> must be provided.<br>Example: BTC/USDT</td></tr><tr><td>transactTime</td><td>integer</td><td><code>1273774892913</code></td><td>Time the order is placed</td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Time the order is placed</td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Quantity ordered</td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Quantity of orders that has been executed</td></tr><tr><td>type</td><td>string</td><td><code>LIMIT</code></td><td>Order type <code>LIMIT,MARKET</code></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>Order side：<code>BUY, SELL</code></td></tr><tr><td>status</td><td>string</td><td><code>0</code></td><td>0 = new order</td></tr></tbody></table>
 
 ### Test New Order
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v2/order/test`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v2/order/test`
 
 Test new order creation and signature/recvWindow length. Creates and validates a new order but does not send the order into the matching engine.
 
@@ -488,13 +468,11 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 {% tabs %}
 {% tab title="200: OK  Successfully test new order" %}
-
 ```javascript
 {
     // Response
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -502,7 +480,7 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 ### Batch Orders
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v2/batchOrders`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v2/batchOrders`
 
 **batch contains at most 10 orders**
 
@@ -523,7 +501,6 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 {
     "idsString": [ //Character String Type Order ID (Recommended)
@@ -538,7 +515,6 @@ Test new order creation and signature/recvWindow length. Creates and validates a
     ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -561,7 +537,7 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 ### Query Order
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/order`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/order`
 
 #### Query Parameters
 
@@ -581,7 +557,6 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 {
     'orderId': '499890200602846976', 
@@ -597,7 +572,6 @@ Test new order creation and signature/recvWindow length. Creates and validates a
     'transactTime': '1574327555669'
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -605,11 +579,11 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 #### **Response:**
 
-<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>Example</th><th>Description</th><th></th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>Order ID (system generated)</td><td></td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Order ID (sent by yourself)</td><td></td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Currency Pair Name</td><td></td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Order Price</td><td></td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Number of orders</td><td></td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Number of orders already filled</td><td></td></tr><tr><td>avgPrice</td><td>float</td><td><code>4754.24</code></td><td>Average price of orders already filled</td><td></td></tr><tr><td>type</td><td>string</td><td>limit</td><td>The order type<code>LIMIT,MARKET</code></td><td></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>Order direction. Possible values can only be: BUY (buy long) and SELL (sell short)</td><td></td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>Order status. Possible values are NEW (new order, no transaction), PARTIALLY_FILLED (partially filled), FILLED (fully filled), CANCELED (cancelled) and REJECTED (order rejected).POST</td><td></td></tr><tr><td>transactTime</td><td>string</td><td>1574327555669</td><td>Order Creation Time</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>Order ID (system generated)</td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Order ID (sent by yourself)</td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Currency Pair Name</td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Order Price</td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Number of orders</td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Number of orders already filled</td></tr><tr><td>avgPrice</td><td>float</td><td><code>4754.24</code></td><td>Average price of orders already filled</td></tr><tr><td>type</td><td>string</td><td>limit</td><td>The order type<code>LIMIT,MARKET</code></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>Order direction. Possible values can only be: BUY (buy long) and SELL (sell short)</td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>Order status. Possible values are NEW (new order, no transaction), PARTIALLY_FILLED (partially filled), FILLED (fully filled), CANCELED (cancelled) and REJECTED (order rejected).POST</td></tr><tr><td>transactTime</td><td>string</td><td>1574327555669</td><td>Order Creation Time</td></tr></tbody></table>
 
 ### Cancel Order
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v2/cancel`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v2/cancel`
 
 #### Headers
 
@@ -629,7 +603,6 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 {
     'symbol': 'BHTUSDT', 
@@ -639,7 +612,6 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 }
 
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -647,11 +619,11 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 #### Response:
 
-<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th><th></th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>ID of the order</td><td></td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Unique ID of the order.</td><td></td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Name of the symbol</td><td></td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>The state of the order.Possible values include <code>NEW</code>, <code>PARTIALLY_FILLED</code>, <code>FILLED</code>, <code>CANCELED</code>, and <code>REJECTED</code>.POST<br></td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>ID of the order</td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Unique ID of the order.</td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Name of the symbol</td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>The state of the order.Possible values include <code>NEW</code>, <code>PARTIALLY_FILLED</code>, <code>FILLED</code>, <code>CANCELED</code>, and <code>REJECTED</code>.POST<br></td></tr></tbody></table>
 
 ### Batch cancel orders
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v2/batchCancel`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v2/batchCancel`
 
 **batch contains at most 10 orders**
 
@@ -672,7 +644,6 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 {
     "success": [
@@ -685,7 +656,6 @@ Test new order creation and signature/recvWindow length. Creates and validates a
     ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -693,7 +663,7 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 ### Current Open Orders
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/openOrders`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/openOrders`
 
 If `symbol` parameter is not provided, the API will consume a significantly higher rate limit.
 
@@ -716,7 +686,6 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
     {
@@ -736,7 +705,6 @@ If `symbol` parameter is not provided, the API will consume a significantly high
         },...
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -746,22 +714,22 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 #### **Response:**
 
-<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th><th></th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>ID of the order</td><td></td></tr><tr><td>orderIdString</td><td>string</td><td>"<code>150695552109032492"</code></td><td>Character String Type Order ID (Recommended)</td><td></td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Unique ID of the order.</td><td></td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Name of the symbol</td><td></td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Price of the order</td><td></td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Quantity ordered</td><td></td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Quantity of orders that has been executed</td><td></td></tr><tr><td>avgPrice</td><td>float</td><td><code>4754.24</code></td><td>Average price of filled orders.</td><td></td></tr><tr><td>type</td><td>string</td><td><code>LIMIT</code></td><td>The order type<code>LIMIT,MARKET</code></td><td></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>The order side <code>BUY,SELL</code></td><td></td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>The state of the order.Possible values include <code>NEW</code>, <code>PARTIALLY_FILLED</code>, <code>FILLED</code>, <code>CANCELED</code>, and <code>REJECTED</code>.GET</td><td></td></tr><tr><td>time</td><td>string</td><td>1574327555669</td><td>Creation Time</td><td></td></tr><tr><td>stopPrice</td><td>float</td><td>21323.32</td><td><p>Take Profit and Stop Loss Trigger Price</p><p>4o</p></td><td></td></tr><tr><td>isWorking</td><td>boolean</td><td>true</td><td>Does the order appear in the order book?</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>ID of the order</td></tr><tr><td>orderIdString</td><td>string</td><td>"<code>150695552109032492"</code></td><td>Character String Type Order ID (Recommended)</td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Unique ID of the order.</td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Name of the symbol</td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Price of the order</td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Quantity ordered</td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Quantity of orders that has been executed</td></tr><tr><td>avgPrice</td><td>float</td><td><code>4754.24</code></td><td>Average price of filled orders.</td></tr><tr><td>type</td><td>string</td><td><code>LIMIT</code></td><td>The order type<code>LIMIT,MARKET</code></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>The order side <code>BUY,SELL</code></td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>The state of the order.Possible values include <code>NEW</code>, <code>PARTIALLY_FILLED</code>, <code>FILLED</code>, <code>CANCELED</code>, and <code>REJECTED</code>.GET</td></tr><tr><td>time</td><td>string</td><td>1574327555669</td><td>Creation Time</td></tr><tr><td>stopPrice</td><td>float</td><td>21323.32</td><td><p>Take Profit and Stop Loss Trigger Price</p><p>4o</p></td></tr><tr><td>isWorking</td><td>boolean</td><td>true</td><td>Does the order appear in the order book?</td></tr></tbody></table>
 
 ### History Orders
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v3/historyOrders`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v3/historyOrders`
 
 If `symbol` parameter is not provided, the API will consume a significantly higher rate limit.
 
 #### Query Parameters
 
-| Name      | Type    | Description                                                                                                                                                                                                                                                                                                                                                 |
-| --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| symbol    | String  | Symbol Name E.g. BTC/USDT                                                                                                                                                                                                                                                                                                                                   |
-| limit     | Integer | Default 50; Max 100                                                                                                                                                                                                                                                                                                                                         |
-| startTime | Long    | <p>The start timestamp (ms)</p><ul><li>startTime and endTime are not passed, return 7 days by default;</li><li>Only startTime is passed, return range between startTime and startTime+7 days</li><li>Only endTime is passed, return range between endTime-7 days and endTime</li><li>If both are passed, the rule is endTime - startTime <= 7 day</li></ul> |
-| endTime   | Long    | The end timestamp (ms)                                                                                                                                                                                                                                                                                                                                      |
+| Name      | Type    | Description                                                                                                                                                                                                                                                                                                                                                      |
+| --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| symbol    | String  | Symbol Name E.g. BTC/USDT                                                                                                                                                                                                                                                                                                                                        |
+| limit     | Integer | Default 50; Max 100                                                                                                                                                                                                                                                                                                                                              |
+| startTime | Long    | <p>The start timestamp (ms)</p><ul><li>startTime and endTime are not passed, return 7 days by default;</li><li>Only startTime is passed, return range between startTime and startTime+7 days</li><li>Only endTime is passed, return range between endTime-7 days and endTime</li><li>If both are passed, the rule is endTime - startTime &#x3C;= 7 day</li></ul> |
+| endTime   | Long    | The end timestamp (ms)                                                                                                                                                                                                                                                                                                                                           |
 
 * If the symbol is not sent, orders for all symbols will be returned in an array.
 * Support query within the last 6 months only.
@@ -776,7 +744,6 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
     {
@@ -796,7 +763,6 @@ If `symbol` parameter is not provided, the API will consume a significantly high
         },...
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -806,11 +772,11 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 #### **Response:**
 
-<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th><th></th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>ID of the order</td><td></td></tr><tr><td>orderIdString</td><td>string</td><td>"<code>150695552109032492"</code></td><td>Character String Type Order ID (Recommended)</td><td></td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Unique ID of the order.</td><td></td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Name of the symbol</td><td></td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Price of the order</td><td></td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Quantity ordered</td><td></td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Quantity of orders that has been executed</td><td></td></tr><tr><td>avgPrice</td><td>float</td><td><code>4754.24</code></td><td>Average price of filled orders.</td><td></td></tr><tr><td>type</td><td>string</td><td><code>LIMIT</code></td><td>The order type<code>LIMIT,MARKET</code></td><td></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>The order side <code>BUY,SELL</code></td><td></td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>The state of the order.Possible values include <code>NEW</code>, <code>PARTIALLY_FILLED</code>, <code>FILLED</code>, <code>CANCELED</code>, and <code>REJECTED</code>.GET</td><td></td></tr><tr><td>time</td><td>string</td><td>1574327555669</td><td>Creation Time</td><td></td></tr><tr><td>stopPrice</td><td>float</td><td>21323.32</td><td><p>Take Profit and Stop Loss Trigger Price</p><p>4o</p></td><td></td></tr><tr><td>isWorking</td><td>boolean</td><td>true</td><td>Does the order appear in the order book?</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>example</th><th>description</th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>ID of the order</td></tr><tr><td>orderIdString</td><td>string</td><td>"<code>150695552109032492"</code></td><td>Character String Type Order ID (Recommended)</td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Unique ID of the order.</td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Name of the symbol</td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Price of the order</td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Quantity ordered</td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Quantity of orders that has been executed</td></tr><tr><td>avgPrice</td><td>float</td><td><code>4754.24</code></td><td>Average price of filled orders.</td></tr><tr><td>type</td><td>string</td><td><code>LIMIT</code></td><td>The order type<code>LIMIT,MARKET</code></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>The order side <code>BUY,SELL</code></td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>The state of the order.Possible values include <code>NEW</code>, <code>PARTIALLY_FILLED</code>, <code>FILLED</code>, <code>CANCELED</code>, and <code>REJECTED</code>.GET</td></tr><tr><td>time</td><td>string</td><td>1574327555669</td><td>Creation Time</td></tr><tr><td>stopPrice</td><td>float</td><td>21323.32</td><td><p>Take Profit and Stop Loss Trigger Price</p><p>4o</p></td></tr><tr><td>isWorking</td><td>boolean</td><td>true</td><td>Does the order appear in the order book?</td></tr></tbody></table>
 
 ### Trades
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v2/myTrades`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/myTrades`
 
 #### Query Parameters
 
@@ -830,7 +796,6 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
   {
@@ -850,7 +815,6 @@ If `symbol` parameter is not provided, the API will consume a significantly high
   },...
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -862,18 +826,18 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 ### Trades-V3
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v3/myTrades`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v3/myTrades`
 
 If `symbol` parameter is not provided, the API will consume a significantly higher rate limit.
 
 #### Query Parameters
 
-| Name      | Type    | Description                                                                                                                                                                                                                                                                                                                                                  |
-| --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| symbol    | String  | Symbol Name E.g. BTC/USDT                                                                                                                                                                                                                                                                                                                                    |
-| limit     | Integer | Default 50; Max 100                                                                                                                                                                                                                                                                                                                                          |
-| startTime | Long    | <p>The start timestamp (ms)</p><ul><li>startTime and endTime are not passed, return 7 days by default;</li><li>Only startTime is passed, return range between startTime and startTime+7 days</li><li>Only endTime is passed, return range between endTime-7 days and endTime</li><li>If both are passed, the rule is endTime - startTime <= 7 days</li></ul> |
-| endTime   | Long    | The end timestamp (ms)                                                                                                                                                                                                                                                                                                                                       |
+| Name      | Type    | Description                                                                                                                                                                                                                                                                                                                                                       |
+| --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| symbol    | String  | Symbol Name E.g. BTC/USDT                                                                                                                                                                                                                                                                                                                                         |
+| limit     | Integer | Default 50; Max 100                                                                                                                                                                                                                                                                                                                                               |
+| startTime | Long    | <p>The start timestamp (ms)</p><ul><li>startTime and endTime are not passed, return 7 days by default;</li><li>Only startTime is passed, return range between startTime and startTime+7 days</li><li>Only endTime is passed, return range between endTime-7 days and endTime</li><li>If both are passed, the rule is endTime - startTime &#x3C;= 7 days</li></ul> |
+| endTime   | Long    | The end timestamp (ms)                                                                                                                                                                                                                                                                                                                                            |
 
 * If the symbol is not sent, trades for all symbols will be returned in an array.
 * Support query within the last 6 months only.
@@ -888,7 +852,6 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
   {
@@ -908,7 +871,6 @@ If `symbol` parameter is not provided, the API will consume a significantly high
   },...
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -928,9 +890,7 @@ Endpoints under Account require an API-key and a signature.\\
 
 ### Account Information
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/sapi/v1/account`
-
-#### Headers
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v1/account`
 
 | Name        | Type   | Description  |
 | ----------- | ------ | ------------ |
@@ -940,25 +900,18 @@ Endpoints under Account require an API-key and a signature.\\
 
 {% tabs %}
 {% tab title="200: OK  Successfully retrieved account information." %}
-
 ```javascript
-{
-    'balances': 
-        [
-            {
-                'asset': 'BTC', 
-                'free': '0', 
-                'locked': '0'
-                }, 
-            {
-                'asset': 'ETH', 
-                'free': '0', 
-                'locked': '0'
-                },...
-        ]
+{{
+    "balances": [
+        {
+            "uid": 32556741,
+            "asset": "BTC",
+            "free": "0.0000000000",
+            "locked": "0.0000000000"
+        }
+    ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -966,21 +919,22 @@ Endpoints under Account require an API-key and a signature.\\
 
 #### Response: <a href="#response-10" id="response-10"></a>
 
-| name       | type | description          |
-| ---------- | ---- | -------------------- |
-| `balances` | \[]  | Show balance details |
+| name       | type | description  |
+| ---------- | ---- | ------------ |
+| `balances` | \[]  | balance list |
 
 `balances` field:
 
 | name     | type   | example | description                     |
 | -------- | ------ | ------- | ------------------------------- |
+| `uid`    | string | 10001   | userid                          |
 | `asset`  | string | `USDT`  | Name of the asset               |
 | `free`   | float  | 1000.30 | Amount available for use        |
 | `locked` | float  | 400     | Amount locked (for open orders) |
 
 ### **Transfer**
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/asset/transfer`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/asset/transfer`
 
 #### Headers
 
@@ -1000,8 +954,7 @@ Endpoints under Account require an API-key and a signature.\\
 | toAccount<mark style="color:red;">\*</mark>   | String | <p>To Account<br><strong>EXCHANGE</strong>: Spot Account<br><strong>FUTURE</strong>: Futures Account</p>   |
 
 {% tabs %}
-{% tab title="200: OK  划转成功" %}
-
+{% tab title="200: OK Successfully transferred funds" %}
 ```javascript
 {
     "code": "0",
@@ -1011,26 +964,19 @@ Endpoints under Account require an API-key and a signature.\\
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
-**权重(IP/UID): 5**
+**weight(IP/UID): 5**
 
 #### Response:
 
-| transferId | String |
-
-```
-1a9ec387-8b81-4789-a98e-bc6a606c8736
-```
-
-| Transfer ID | |\
-| ---------- | ------ | ------------------------------------------------------------- | ----------- | - |
+<table data-header-hidden><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>transferId</td><td>String</td><td><pre><code>1a9ec387-8b81-4789-a98e-bc6a606c8736
+</code></pre></td><td>Transfer ID</td></tr></tbody></table>
 
 ### The transfer record query
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/asset/transferQuery`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/asset/transferQuery`
 
 #### Headers
 
@@ -1059,8 +1005,7 @@ Only data from the last 6 months is supported for querying.
 | limit       | Integer | If limit is not provided, the default is 20, with a maximum of 100.                                     |
 
 {% tabs %}
-{% tab title="200: OK  划转成功" %}
-
+{% tab title="200: OK  Successfully transferred funds" %}
 ```javascript
 {
     "code": "0",
@@ -1080,30 +1025,12 @@ Only data from the last 6 months is supported for querying.
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
-**权重(IP/UID): 5**
+**weight(IP/UID): 5**
 
 #### Response:
 
-| transferId | String |
-
-```
-1a9ec387-8b81-4789-a98e-bc6a606c8736
-```
-
-| Transfer ID | |\
-| ----------- | ------ | ------------------------------------------------------------- | ------------------------------------------------------------------------------ | - |\
-| fromAccount | String | EXCHANGE | From Account | |\
-| toAccount | String | FUTURE | To Account | |\
-| coinSymbol | String | USDT | coinSymbol | |\
-| createTime | long | 1742300000000 | Creation Timestamp | |\
-| amount | String | 1 | Quantity | |\
-| status | String | SUCCESS |
-
-Status\
-SUCCESS = Success\
-PENDING = In Progress\
-FAILED = Failed
+<table data-header-hidden><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>transferId</td><td>String</td><td><pre><code>1a9ec387-8b81-4789-a98e-bc6a606c8736
+</code></pre></td><td>Transfer ID</td></tr><tr><td>fromAccount</td><td>String</td><td>EXCHANGE</td><td>From Account</td></tr><tr><td>toAccount</td><td>String</td><td>FUTURE</td><td>To Account</td></tr><tr><td>coinSymbol</td><td>String</td><td>USDT</td><td>coinSymbol</td></tr><tr><td>createTime</td><td>long</td><td>1742300000000</td><td>Creation Timestamp</td></tr><tr><td>amount</td><td>String</td><td>1</td><td>Quantity</td></tr><tr><td>status</td><td>String</td><td>SUCCESS</td><td>Status<br>SUCCESS = Success<br>PENDING = In Progress<br>FAILED = Failed</td></tr></tbody></table>

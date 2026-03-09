@@ -1,6 +1,6 @@
-# Summary
+# Table of contents
 
-* [OpenApi Basic Information](1-openapi-basic-information.md)
+* [OpenApi Basic Information](README.md)
 * [CHANGELOG](2-changelog.md)
 * [ENUM](3-enum.md)
 * [Spot](4-spot.md)

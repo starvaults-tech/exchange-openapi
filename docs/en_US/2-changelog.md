@@ -1,13 +1,17 @@
 # CHANGELOG
 
+## 2026-02-09
+
+Added: WebSocket push support for asset changes and order update events.
+
 ## 2025-03-28
 
-* `https://openapi.xxx.xx/sapi/v2/symbols`. Return value Add "feeRateMaker" "feeRateTaker"
+* `https://openapi.star-vaults.com/sapi/v2/symbols`. Return value Add "feeRateMaker" "feeRateTaker"
 
 ## 2025-03-26
 
-* Added a new historyOrders data RESTful API URL `https://openapi.xxx.xx/sapi/v3/historyOrders`.
-* Added a new myTrades data RESTful API URL `https://openapi.xxx.xx/sapi/v3/myTrades`.
+* Added a new historyOrders data RESTful API URL `https://openapi.star-vaults.com/sapi/v3/historyOrders.`
+* Added a new myTrades data RESTful API URL `https://openapi.star-vaults.com/sapi/v3/myTrades.`
 
 ## 2025-02-12
 
