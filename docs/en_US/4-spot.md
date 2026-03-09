@@ -13,7 +13,7 @@ This endpoint checks connectivity to the host
 {% tabs %}
 {% tab title="200: OK  Connection normal" %}
 ```javascript
-}
+{}
 ```
 {% endtab %}
 {% endtabs %}

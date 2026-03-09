@@ -2,7 +2,7 @@
 
 ## Apply for withdrawal
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v1/withdraw/apply`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/withdraw/apply`
 
 #### Headers
 
@@ -24,7 +24,6 @@
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```json
 {
     "code":"Ѳ",//Return code, 0 for success, other failures
@@ -34,7 +33,6 @@
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -65,7 +63,6 @@
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```json
 {
     "code": "0",
@@ -103,7 +100,6 @@
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 

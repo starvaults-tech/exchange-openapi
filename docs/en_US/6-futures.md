@@ -2,40 +2,36 @@
 
 ## Public
 
-### Security: [None](https://github.com/exhcange/gitbook-en-new/blob/master/broken-reference/README.md)
+### Security: None
 
 Endpoints under **Public** section can be accessed freely without requiring any API-key or signatures
 
 ## Test Connectivity
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/ping`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/ping`
 
 This endpoint checks connectivity to the host
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```
 {}
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Check Server Time
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/time`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/time`
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```
 {
     "serverTime":1607702400000,
     "timezone":Chinese standard time
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -48,12 +44,11 @@ This endpoint checks connectivity to the host
 
 ## Futures List
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/contracts`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/contracts`
 
 {% tabs %}
 {% tab title="200 " %}
-
-```
+```javascript
 [
     {
         "symbol": "H-HT-USDT",
@@ -79,7 +74,6 @@ This endpoint checks connectivity to the host
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -94,11 +88,11 @@ This endpoint checks connectivity to the host
 | multiplier      | number | `0.5`        | Futures face value                                                            |
 | multiplierCoin  | string | `BTC`        | Futures face value unit                                                       |
 | pricePrecision  | number | `4`          | Precision of the price                                                        |
-| minOrderVolume  | number | `10`         | Minimum order volume                                                          |
+| minOrderVolume  | number | `10`         | Minimum order volume, the unit is "cont".                                     |
 | minOrderMoney   | number | `10`         | Minimum order value                                                           |
-| maxMarketVolume | number | `100000`     | Market price order maximum volume                                             |
+| maxMarketVolume | number | `100000`     | Market price order maximum volume, the unit is "cont".                        |
 | maxMarketMoney  | number | `100000`     | Market price order maximum value                                              |
-| maxLimitVolume  | number | `100000`     | Limit price order maximum volume                                              |
+| maxLimitVolume  | number | `100000`     | Limit price order maximum volume, the unit is "cont".                         |
 | maxValidOrder   | number | `100000`     | Maximum valid order quantity                                                  |
 | minLever        | number | `5`          | Minimum leverage multiplier                                                   |
 | maxLever        | number | `5`          | Maximum leverage multiplier                                                   |
@@ -109,13 +103,13 @@ This endpoint checks connectivity to the host
 
 ## Market <a href="#hang-qing-xiang-guan" id="hang-qing-xiang-guan"></a>
 
-### Security: [None](https://exdocs.gitbook.io/v/general-info#jie-kou-jian-quan-lei-xing)​ <a href="#an-quan-lei-xing-none-1" id="an-quan-lei-xing-none-1"></a>
+### Security: None​ <a href="#an-quan-lei-xing-none-1" id="an-quan-lei-xing-none-1"></a>
 
 Market section can be accessed freely without requiring any API-key or signatures.
 
 ## Depth
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/depth`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/depth`
 
 Market depth data
 
@@ -128,7 +122,6 @@ Market depth data
 
 {% tabs %}
 {% tab title="200 Successfully retrieve market depth data" %}
-
 ```java
 {
   "bids": [
@@ -153,7 +146,6 @@ Market depth data
   ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -174,7 +166,7 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 ## 24hrs ticker
 
-<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.xxx.xx/fapi/v1/ticker`
+<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.star-vaults.com/fapi/v1/ticker`
 
 24 hour price change statistics
 
@@ -186,7 +178,6 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 {% tabs %}
 {% tab title="200 Successfully obtain ticker info" %}
-
 ```java
 {
     "high": "9279.0301",
@@ -197,7 +188,6 @@ The fields bids and asks are lists of order book price level entries, sorted fro
     "time": 1595563624731
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -214,11 +204,10 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 ## All market tickers
 
-<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.xxx.xx/fapi/v1/ticker_all`
+<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.star-vaults.com/fapi/v1/ticker_all`
 
 {% tabs %}
 {% tab title="200  Successfully retrieved ticker information" %}
-
 ```json
 {"e_btcusdt":{"high": "9279.0301",
     "vol": "1302",
@@ -235,7 +224,6 @@ The fields bids and asks are lists of order book price level entries, sorted fro
     "time": 1595563624731
 }}
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -252,7 +240,7 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 ## Get index/marked price
 
-<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.xxx.xx/fapi/v1/index`
+<mark style="color:blue;">`GET`</mark> `https://futuersopenapi.star-vaults.com/fapi/v1/index`
 
 #### Query Parameters
 
@@ -263,7 +251,6 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 {
     "markPrice": 581.5,
@@ -273,7 +260,6 @@ The fields bids and asks are lists of order book price level entries, sorted fro
     "time": 1608273554063
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -288,7 +274,7 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 ## Kline/charts data
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/klines`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/klines`
 
 #### Query Parameters
 
@@ -300,7 +286,6 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 [
     {
@@ -329,7 +314,6 @@ The fields bids and asks are lists of order book price level entries, sorted fro
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -346,47 +330,47 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 ## Trading <a href="#jiao-yi-xiang-guan" id="jiao-yi-xiang-guan"></a>
 
-### Security: [TRADE](https://exdocs.gitbook.io/v/general-info#jie-kou-jian-quan-lei-xing)​ <a href="#an-quan-lei-xing-trade" id="an-quan-lei-xing-trade"></a>
+### Security: TRADE​ <a href="#an-quan-lei-xing-trade" id="an-quan-lei-xing-trade"></a>
 
-All interfaces under the transaction require [signature and API-key verification​](https://exdocs.gitbook.io/v/v/english/general-info#signed-trade-yu-userdata-endpoint-security)
+All interfaces under the transaction require signature and API-key verification​
 
 ## Order creation
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/order`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/order`
 
 Creation of single new orders
 
 #### Headers
 
-| Name        | Type   | Description  |
-| ----------- | ------ | ------------ |
-| X-CH-TS     | string | Time stamp   |
-| X-CH-APIKEY | string | Your API-key |
-| X-CH-SIGN   | string | Signature    |
+| Name            | Type   | Description   |
+| --------------- | ------ | ------------- |
+| X-CH-TS         | string | Time stamp    |
+| X-CH-APIKEY     | string | Your API-key  |
+| X-CH-SIGN       | string | Signature     |
+| futures-version | string | version:`101` |
 
 #### Request Body
 
-| Name          | Type   | Description                                                  |
-| ------------- | ------ | ------------------------------------------------------------ |
-| volume        | number | Order quantity                                               |
-| price         | number | Order price                                                  |
-| contractName  | string | Futures name E.g. `E-BTC-USDT`                               |
-| type          | string | Order type, `LIMIT/MARKET`                                   |
-| side          | string | Trade direction, `BUY/SELL`                                  |
-| open          | string | Open balancing direction, `OPEN/CLOSE`                       |
-| positionType  | number | Hold-up position, `1 full position, 2 restrictive position`  |
-| clientOrderId | string | Client order identity, a string with length less than 32 bit |
-| timeInForce   | string | `IOC, FOK, POST_ONLY`                                        |
+| Name          | Type   | Description                                                                                                         |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
+| volume        | number | Order quantity                                                                                                      |
+| price         | number | Order price                                                                                                         |
+| orderUnit     | number | <p>order unit<br><code>1</code>(coin), <code>2</code>(cont) , <code>3</code>(value)<br>default : <code>2</code></p> |
+| contractName  | string | Futures name E.g. `E-BTC-USDT`                                                                                      |
+| type          | string | Order type, `LIMIT/MARKET`                                                                                          |
+| side          | string | Trade direction, `BUY/SELL`                                                                                         |
+| open          | string | Open balancing direction, `OPEN/CLOSE`                                                                              |
+| positionType  | number | Hold-up position, `1 full position, 2 restrictive position`                                                         |
+| clientOrderId | string | Client order identity, a string with length less than 32 bit                                                        |
+| timeInForce   | string | <p>When the type is MARKET ,not need this<br><code>IOC, FOK, POST_ONLY</code></p>                                   |
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 {
     "orderId": 256609229205684228
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -398,45 +382,46 @@ Creation of single new orders
 
 ## Condition order creation
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/conditionOrder`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/conditionOrder`
 
 #### Headers
 
-| Name        | Type   | Description  |
-| ----------- | ------ | ------------ |
-| X-CH-TS     | string | Time stamp   |
-| X-CH-APIKEY | string | Your API-key |
-| X-CH-SIGN   | string | Signature    |
+| Name            | Type   | Description    |
+| --------------- | ------ | -------------- |
+| X-CH-TS         | string | Time stamp     |
+| X-CH-APIKEY     | string | Your API-key   |
+| X-CH-SIGN       | string | Signature      |
+| futures-version | string | version: `101` |
 
 #### Request Body
 
-| Name         | Type   | Description                                                 |
-| ------------ | ------ | ----------------------------------------------------------- |
-| volume       | number | Order quantity                                              |
-| triggerType  | string | Trigger type `3UP/4DOWN`                                    |
-| triggerPrice | string | Trigger price                                               |
-| positionType | number | Hold-up position, `1 full position, 2 restrictive position` |
-| open         | string | Open balancing direction, `OPEN/CLOSE`                      |
-| side         | string | Trade direction, `BUY/SELL`                                 |
-| type         | string | Order type, `LIMIT/MARKET`                                  |
-| contractName | string | Futures name E.g. `E-BTC-USDT`                              |
-| price        | number | Order price                                                 |
+| Name          | Type   | Description                                                                                                         |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
+| volume        | number | Order quantity                                                                                                      |
+| price         | number | Order price                                                                                                         |
+| orderUnit     | number | <p>order unit<br><code>1</code>(coin), <code>2</code>(cont) , <code>3</code>(value)<br>default : <code>2</code></p> |
+| contractName  | string | Futures name E.g. `E-BTC-USDT`                                                                                      |
+| type          | string | Order type, `LIMIT/MARKET`                                                                                          |
+| side          | string | Trade direction, `BUY/SELL`                                                                                         |
+| open          | string | Open balancing direction, `OPEN/CLOSE`                                                                              |
+| positionType  | number | Hold-up position, `1 full position, 2 restrictive position`                                                         |
+| clientOrderId | string | Client order identity, a string with length less than 32 bit                                                        |
+| triggerType   | string | Trigger type `3UP/4DOWN`                                                                                            |
+| triggerPrice  | string | Trigger price                                                                                                       |
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 {
      "orderId": 256609229205684228
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Cancel order
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/cancel`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/cancel`
 
 Speed limit rules: 20 times/ 2 seconds
 
@@ -457,19 +442,17 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 {
     "orderId": 256609229205684228
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Cancel all orders
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/cancel_all`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/cancel_all`
 
 #### Headers
 
@@ -483,7 +466,6 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 : OK A successful response has a code of 0, a code less than 0 indicates an error, and msg contains the reason for the error. " %}
-
 ```json
 { 
     "code": "0", 
@@ -491,13 +473,12 @@ Speed limit rules: 20 times/ 2 seconds
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Order details
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/order`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/order`
 
 #### Request Body
 
@@ -507,8 +488,7 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 " %}
-
-```
+```javascript
 [
     {
        "side": "BUY",
@@ -521,35 +501,38 @@ Speed limit rules: 20 times/ 2 seconds
        "action": "OPEN",
        "contractName": "E-BTC-USDT",
        "type": "LIMIT",
-       "status": "INIT"
+       "status": "INIT",
+       "tradeFee": 2.700,
+       "realizedAmount": 10.8
     }
 ]
-
-
 ```
-
 {% endtab %}
 {% endtabs %}
 
 #### Response:
 
-| name           | type   | example              | description                                                                                                                                                                           |
-| -------------- | ------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `orderId`      | long   | `150695552109032492` | Order ID（system generated                                                                                                                                                             |
-| `contractName` | string | `E-BTC-USDT`         | Futures name                                                                                                                                                                          |
-| `price`        | float  | `10.5`               | Order price                                                                                                                                                                           |
-| `origQty`      | float  | `10.5`               | Order quantity                                                                                                                                                                        |
-| `executedQty`  | float  | `20`                 | Order quantity                                                                                                                                                                        |
-| `avgPrice`     | float  | `10.5`               | Average transaction price                                                                                                                                                             |
-| `symbol`       | string | `BHTUSDT`            | Coin pair name                                                                                                                                                                        |
-| `status`       | string | `NEW`                | Order status. Possible values are：`NEW`(new order，not filled)、`PARTIALLY_FILLED`（partially filled）、`FILLED`（fully filled）、`CANCELLED`（already cancelled）and`REJECTED`（order rejected） |
-| `side`         | string | `NEW`                | Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）                                                                                                        |
-| `action`       | string | `OPEN`               | `OPEN/CLOSE`                                                                                                                                                                          |
-| `transactTime` | long   | `1607702400000`      | Order creation time                                                                                                                                                                   |
+| name             | type   | example              | description                                                                                                                                                                           |
+| ---------------- | ------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `orderId`        | long   | `150695552109032492` | Order ID（system generated                                                                                                                                                             |
+| `contractName`   | string | `E-BTC-USDT`         | Futures name                                                                                                                                                                          |
+| `price`          | float  | `10.5`               | Order price                                                                                                                                                                           |
+| `origQty`        | float  | `10.5`               | Order quantity                                                                                                                                                                        |
+| `executedQty`    | float  | `20`                 | Order quantity                                                                                                                                                                        |
+| `avgPrice`       | float  | `10.5`               | Average transaction price                                                                                                                                                             |
+| `symbol`         | string | `BHTUSDT`            | Coin pair name                                                                                                                                                                        |
+| `status`         | string | `NEW`                | Order status. Possible values are：`NEW`(new order，not filled)、`PARTIALLY_FILLED`（partially filled）、`FILLED`（fully filled）、`CANCELLED`（already cancelled）and`REJECTED`（order rejected） |
+| `side`           | string | `NEW`                | Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）                                                                                                        |
+| `action`         | string | `OPEN`               | `OPEN/CLOSE`                                                                                                                                                                          |
+| `transactTime`   | long   | `1607702400000`      | Order creation time                                                                                                                                                                   |
+| `tradeFee`       | float  | 2.9                  | order trade fee                                                                                                                                                                       |
+| `realizedAmount` | float  | 10.6                 | order prfit                                                                                                                                                                           |
+
+
 
 ## Open order
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/openOrders`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/openOrders`
 
 **Speed limit rules:**\
 **Obtain open futures, the user's current order**
@@ -570,7 +553,6 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 [
     {
@@ -587,9 +569,7 @@ Speed limit rules: 20 times/ 2 seconds
        "status": "INIT"
     }
 ]
-
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -607,11 +587,11 @@ Speed limit rules: 20 times/ 2 seconds
 | `side`         | string | `BUY`                | Order direction. Possible values can only be：`BUY`（buy long）and `SELL`（sell short）                                                                                                    |
 | `status`       | string | `NEW`                | Order status. Possible values are：`NEW`(new order，not filled)、`PARTIALLY_FILLED`（partially filled）、`FILLED`（fully filled）、`CANCELLED`（already cancelled）and`REJECTED`（order rejected） |
 | `action`       | string | `OPEN`               | `OPEN/CLOSE`                                                                                                                                                                          |
-| `transactTime` | long   | `1607702400000`      | Order creation time,                                                                                                                                                                  |
+| `transactTime` | long   | `1607702400000`      | Order creation time                                                                                                                                                                   |
 
 ## order history
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/orderHistorical`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/orderHistorical`
 
 #### Headers
 
@@ -623,15 +603,14 @@ Speed limit rules: 20 times/ 2 seconds
 
 #### Request Body
 
-| Name         | Type   | Description                           |
-| ------------ | ------ | ------------------------------------- |
-| contractName | string | Futures name E.g. E-BTC-USDT          |
-| limit        | string | Lines per page, default 100, max 1000 |
-| fromId       | long   | Start retrieving from this Id         |
+| Name         | Type   | Description                          |
+| ------------ | ------ | ------------------------------------ |
+| contractName | string | Futures name E.g. E-BTC-USDT         |
+| limit        | string | Lines per page, default 100, max 500 |
+| fromId       | long   | Start retrieving from this Id        |
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
     {
@@ -659,13 +638,12 @@ Speed limit rules: 20 times/ 2 seconds
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## profit history
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/profitHistorical`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/profitHistorical`
 
 #### Headers
 
@@ -677,15 +655,16 @@ Speed limit rules: 20 times/ 2 seconds
 
 #### Request Body
 
-| Name         | Type   | Description                           |
-| ------------ | ------ | ------------------------------------- |
-| contractName | string | Futures name E.g. E-BTC-USDT          |
-| limit        | string | Lines per page, default 100, max 1000 |
-| fromId       | long   | Start retrieving from this Id         |
+| Name         | Type   | Description                                                                                                             |
+| ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------- |
+| contractName | string | <p>Futures name E.g. E-BTC-USDT<br>Defaults to all contracts if omitted</p>                                             |
+| limit        | string | Lines per page, default 100, max 500                                                                                    |
+| fromId       | long   | Start retrieving from this Id                                                                                           |
+| startTime    | long   | timestemp (ms): 1735721190000                                                                                           |
+| endTime      | long   | <p>timestemp (ms): 1735721190000<br>startTime and endTime must be provided together，The query defaults to all time.</p> |
 
 {% tabs %}
 {% tab title="200: OK " %}
-
 ```javascript
 [
     {
@@ -709,21 +688,20 @@ Speed limit rules: 20 times/ 2 seconds
     }
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Order record
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/myTrades`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/myTrades`
 
 #### Query Parameters
 
-| Name         | Type   | Description                           |
-| ------------ | ------ | ------------------------------------- |
-| contractName | string | Futures name E.g. E-BTC-USDT          |
-| limit        | string | Lines per page, default 100, max 1000 |
-| fromId       | long   | Start retrieving from this tradeId    |
+| Name         | Type   | Description                          |
+| ------------ | ------ | ------------------------------------ |
+| contractName | string | Futures name E.g. E-BTC-USDT         |
+| limit        | string | Lines per page, default 100, max 500 |
+| fromId       | long   | Start retrieving from this tradeId   |
 
 #### Headers
 
@@ -735,7 +713,6 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 [
   {
@@ -752,7 +729,6 @@ Speed limit rules: 20 times/ 2 seconds
   },...
 ]
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -778,7 +754,7 @@ Speed limit rules: 20 times/ 2 seconds
 
 ## Change Position Mode
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/edit_user_position_model`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/edit_user_position_model`
 
 #### Headers
 
@@ -797,7 +773,6 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 : OK Success, code is 0. A code less than 0 indicates an error, and msg provides the reason for the error." %}
-
 ```java
 { 
     "code": "0", 
@@ -805,13 +780,12 @@ Speed limit rules: 20 times/ 2 seconds
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Change Margin Mode
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/edit_user_margin_model`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/edit_user_margin_model`
 
 #### Headers
 
@@ -830,7 +804,6 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 : OK Success, code is 0. A code less than 0 indicates an error, and msg provides the reason for the error." %}
-
 ```java
 { 
     "code": "0", 
@@ -838,13 +811,12 @@ Speed limit rules: 20 times/ 2 seconds
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Adjust Position Margin
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/edit_position_margin`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/edit_position_margin`
 
 #### Headers
 
@@ -863,7 +835,6 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 : OK Success, code is 0. A code less than 0 indicates an error, and msg provides the reason for the error." %}
-
 ```java
 { 
     "code": "0", 
@@ -871,13 +842,12 @@ Speed limit rules: 20 times/ 2 seconds
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Change Leverage Ratio
 
-<mark style="color:green;">`POST`</mark> `https://futuresopenapi.xxx.xx/fapi/v1/edit_lever`
+<mark style="color:green;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/edit_lever`
 
 #### Headers
 
@@ -896,7 +866,6 @@ Speed limit rules: 20 times/ 2 seconds
 
 {% tabs %}
 {% tab title="200 : OK Success, code is 0. A code less than 0 indicates an error, and msg provides the reason for the error." %}
-
 ```java
 { 
     "code": "0", 
@@ -904,19 +873,18 @@ Speed limit rules: 20 times/ 2 seconds
     "data": null 
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Account <a href="#zhang-hu" id="zhang-hu"></a>
 
-### Security: [USER\_DATA](https://exdocs.gitbook.io/v/general-info#jie-kou-jian-quan-lei-xing)​ <a href="#an-quan-lei-xing-userdata" id="an-quan-lei-xing-userdata"></a>
+### Security: USER\_DATA​ <a href="#an-quan-lei-xing-userdata" id="an-quan-lei-xing-userdata"></a>
 
-All interfaces under the account require [signature and API-key verification​](https://exdocs.gitbook.io/v/v/english/general-info#signed-trade-yu-userdata-endpoint-security)
+All interfaces under the account require signature and API-key verification​
 
 ## Account info
 
-<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.xxx.com /fapi/v1/account`
+<mark style="color:blue;">`GET`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/account`
 
 #### Headers
 
@@ -928,7 +896,6 @@ All interfaces under the account require [signature and API-key verification​]
 
 {% tabs %}
 {% tab title="200 " %}
-
 ```java
 {
     "account": [
@@ -994,7 +961,6 @@ All interfaces under the account require [signature and API-key verification​]
     ]
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -1039,14 +1005,14 @@ All interfaces under the account require [signature and API-key verification​]
 | uid                   | integer | 10023   | User ID                                                                   |
 | positionType          | integer | 1       | Hold position type(1 full，2 restrictive)                                  |
 | side                  | string  | SELL    | Hold position direction BUY sell long, SELL buy short                     |
-| volume                | float   | 1.05    | Hold quantity                                                             |
+| volume                | integer | 1       | Hold quantity,the unit is "sheet".                                        |
 | openPrice             | float   | 1.05    | Open position price                                                       |
 | avgPrice              | float   | 1.05    | Hold average price                                                        |
 | closePrice            | float   | 1.05    | Balancing average price                                                   |
-| leverageLevel         | float   | 1.05    | Leverage multiple                                                         |
+| leverageLevel         | integer | 1       | Leverage multiple                                                         |
 | holdAmount            | float   | 1.05    | Hold position margin                                                      |
-| closeVolume           | float   | 1.05    | Balanced quantity                                                         |
-| pendingCloseVolume    | float   | 1.05    | The number of pending closing orders                                      |
+| closeVolume           | integer | 1       | Balanced quantity                                                         |
+| pendingCloseVolume    | integer | 1       | The number of pending closing orders                                      |
 | realizedAmount        | float   | 1.05    | Profit and losses occurred                                                |
 | historyRealizedAmount | float   | 1.05    | Historic accumulated profit and losses                                    |
 | tradeFee              | float   | 1.05    | Trading fees                                                              |
@@ -1068,3 +1034,56 @@ All interfaces under the account require [signature and API-key verification​]
 | indexPrice            | float   | 1.05    | Newest marked price                                                       |
 | keepRate              | float   | 1.05    | Scaled minimum kept margin rate                                           |
 | maxFeeRate            | float   | 1.05    | <p>Balancing maximum fees rate<br></p>                                    |
+
+
+
+### Account transaction info
+
+<mark style="color:blue;">`POST`</mark> `https://futuresopenapi.star-vaults.com/fapi/v1/get_user_transaction`
+
+| Name        | Type    | Description  |
+| ----------- | ------- | ------------ |
+| X-CH-SIGN   | string  | Signature    |
+| X-CH-APIKEY | string  | Your API-key |
+| X-CH-TS     | integer | time stamp   |
+
+**Request Body**
+
+| Name                                        | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| beginTime<mark style="color:red;">\*</mark> | string  | <p>Necessary parameter start time</p><p>Pass in the timestamp</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| endTime<mark style="color:red;">\*</mark>   | string  | <p>Necessary parameter end time</p><p>Pass in the timestamp</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| symbol<mark style="color:red;">\*</mark>    | string  | <p>The required parameter is to query the type of margin for the transaction flow<br><code>USDT</code>、<code>EXUSD</code>、<code>DOGE</code></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| page                                        | integer | The current page, defaulting to 1.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| limit                                       | integer | The number of data displayed per page is 200 by default and 200 by maximum                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| assetType                                   | integer | <p>Query account type</p><p>Default is 0: Main account</p><p>1: Bring the order account number</p><p>2: Follow the order account</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| langKey                                     | string  | <p>The language type of the returned data</p><p>The default is: <code>en_US</code> English</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| type                                        | string  | <p>Without passing this parameter, all transaction scenarios will be queried by default</p><p>1: "into", "2: transfer", "more than 3: clearing storehouse", "4: settlement short positions", "5: capital cost", "6: open warehouse fee", "7: unwind fees", 8: "share", "9: poundage is divided into", "give 10: a gold", "give 11: a gold recovery", "12: public and private transfer", "13: unwinding of profit and loss", "KOL transfer 18: application", "19: take single reducing balance", "20: single add balance", "21: documentary decrease balance", "22: documentary add balance", "2 3: with single into 24: ", "take a single transfer", "25: documentary into", "26: documentary transfer", "27: FenRun", "28: merchants risk reserve is divided into"</p> |
+
+**Response:**
+
+| Name              | Type   | mate                                                                                                                                                                                                   |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| uid               | number | coUid                                                                                                                                                                                                  |
+| contractName      | String | contractName                                                                                                                                                                                           |
+| contractOtherName | String | contractOtherName                                                                                                                                                                                      |
+| timeStamp         | number | The transaction generates timestamps                                                                                                                                                                   |
+| type              | String | Currently supported query transaction types: "fundingFee", "transferIn", "transferOut", "openFee", "closeFee", "settlementLossShare", "shareFee", "coupon", "couponRecycle", "settlementClosePosition" |
+| date              | String | Transaction time                                                                                                                                                                                       |
+| amount            | String | Transaction amount                                                                                                                                                                                     |
+| page              | number | Current page count                                                                                                                                                                                     |
+| limit             | number | The number of items per page                                                                                                                                                                           |
+
+| Name              | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ----------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                | number | Transaction ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| contractOtherName | String | contractOtherName                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ctimeMillis       | number | The transaction generates timestamps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| type              | String | Currently supported query flow types: 1: "into", "2: transfer", "more than 3: clearing storehouse", "4: settlement short positions", "5: capital cost", "6: open warehouse fee", "7: unwind fees", 8: "share", "9: poundage is divided into", "give 10: a gold", "give 11: a gold recovery", "12: public and private transfer", "13: unwinding of profit and loss", "KOL transfer 18: application", "19: take single reducing balance", "20: single add balance", "21: documentary decrease balance", "22: documentary add balance", "2 3: with single into 24: ", "take a single transfer", "25: documentary into", "26: documentary transfer", "27: FenRun", "28: merchants risk reserve is divided into" |
+| ctime             | String | Transaction time                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| amount            | number | Transaction amount                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| afterBalance      | number | The account balance after the transfer of funds                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| scene             | number | Transaction scene id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| page              | number | current page                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| limit             | number | page size                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| count             | number | transaction number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
