@@ -10,6 +10,7 @@
 * [Sub Account](sub-account.md)
 * [Wallet](wallet.md)
 * [WebSocket](8-websocket.md)
+* [WebSocket – Asset Changes and Order Updates](websocket-asset-changes-and-order-updates.md)
 * [Websocket-Futures Orders Position](9-websocket-futures-orders-position.md)
 * [Errors](10-errors.md)
 * [Official SDK](11-official-sdk.md)
