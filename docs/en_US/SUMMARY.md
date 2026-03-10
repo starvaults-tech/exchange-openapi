@@ -13,6 +13,7 @@
 * [WebSocket – Asset Changes and Order Updates](websocket-asset-changes-and-order-updates.md)
 * [Websocket-Futures Orders Position](9-websocket-futures-orders-position.md)
 * [CMC docking](cmc-docking.md)
+* [Coingecko docking](coingecko-docking.md)
 * [Errors](10-errors.md)
 * [Official SDK](11-official-sdk.md)
 * [FAQ](12-faq.md)
