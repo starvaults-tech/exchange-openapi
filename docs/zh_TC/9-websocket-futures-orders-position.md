@@ -27,7 +27,7 @@
 
 ### 1.請求路徑：
 
-wss://futuresws.star-vaults.com/position\_order/ws
+`wss://futuresws.star-vaults.com/position_order/ws`
 
 ### 2.請求頭
 
