@@ -16,5 +16,8 @@
 * [Coingecko docking](coingecko-docking.md)
 * [Errors](10-errors.md)
 * [Official SDK](11-official-sdk.md)
+* [CCXT](ccxt/README.md)
+  * [CCXT Information](ccxt/ccxt-information.md)
 * [FAQ](12-faq.md)
 * [Appendix](13-appendix.md)
+* [CCXT Development Manual](ccxt-development-manual.md)
