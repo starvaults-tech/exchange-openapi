@@ -186,6 +186,10 @@ market detpth data
 
 The fields bids and asks are lists of order book price level entries, sorted from best to worst.
 
+| ' ' | float | `131.1` | price level                                       |
+| --- | ----- | ------- | ------------------------------------------------- |
+| ' ' | float | `2.3`   | The total quantity of orders for this price level |
+
 #### 24hrs ticker
 
 <mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/ticker`
