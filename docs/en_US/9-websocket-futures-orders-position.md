@@ -13,10 +13,8 @@ Carry the token in the request header to establish a connection with the backend
 ### 1.1 Request URL
 
 ```
-wss://futuresws.xxx.xxx/position_order/ws
+wss://futuresws.star-vaults.com/position_order/ws
 ```
-
-Replace `xxx` with your own domain name.
 
 ### 1.2 Request Headers
 
@@ -26,11 +24,11 @@ Replace `xxx` with your own domain name.
 
 ### 1.3 Message Body to Send
 
-| Parameter Name | Type    | Required | Description                                                 |
-| -------------- | ------- | -------- | ----------------------------------------------------------- |
-| event          | string  | Yes      | \`sub\` : subscribe message \`unsub\` : unsubscribe message |
-| token          | string  | Yes      | Token generated after login                                 |
-| broker         | Integer | Yes      | SaaS merchant ID                                            |
+| Parameter Name | Type    | Required | Description                                                                              |
+| -------------- | ------- | -------- | ---------------------------------------------------------------------------------------- |
+| event          | string  | Yes      | <p><code>sub</code> : subscribe message <br><code>unsub</code> : unsubscribe message</p> |
+| token          | string  | Yes      | Token generated after login                                                              |
+| broker         | Integer | Yes      | SaaS merchant ID                                                                         |
 
 **Example:**
 
@@ -52,10 +50,8 @@ Carry the api-key in the request header to establish a connection with the backe
 ### 2.1 Request URL
 
 ```
-wss://futuresws.xxx.xxx/position_order/ws
+wss://futuresws.star-vaults.com/position_order/ws
 ```
-
-Replace `xxx` with your own domain name.
 
 ### 2.2 Request Headers
 
@@ -65,11 +61,11 @@ Replace `xxx` with your own domain name.
 
 ### 2.3 Message Body to Send
 
-| Parameter Name | Type    | Required | Description                                                 |
-| -------------- | ------- | -------- | ----------------------------------------------------------- |
-| event          | string  | Yes      | \`sub\` : subscribe message \`unsub\` : unsubscribe message |
-| apiKey         | string  | Yes      | Token generated after login                                 |
-| broker         | Integer | Yes      | SaaS merchant ID                                            |
+| Parameter Name | Type    | Required | Description                                                                                |
+| -------------- | ------- | -------- | ------------------------------------------------------------------------------------------ |
+| event          | string  | Yes      | <p><code>sub</code>: subscribe message </p><p><code>unsub</code> : unsubscribe message</p> |
+| apiKey         | string  | Yes      | Token generated after login                                                                |
+| broker         | Integer | Yes      | SaaS merchant ID                                                                           |
 
 **Example:**
 
@@ -91,7 +87,7 @@ Replace `xxx` with your own domain name.
 ![](https://1436431064-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FaaqHIATNpufmEk12r8vy%2Fuploads%2Fgit-blob-dee6f3cb7369846cedd45e9efb152f671bd0febb%2Fimage_jiZU8mcRBR.png?alt=media)
 
 The actual message body is GZIP-compressed binary data, which needs to be parsed before it can be displayed properly. You can implement the parsing tool in your own language.\
-Here is an online reference tool: <https://www.bejson.com/encrypt/gzip/#google_vignette>
+Here is an online reference tool: [https://www.bejson.com/encrypt/gzip/#google\_vignette](https://www.bejson.com/encrypt/gzip/#google_vignette)
 
 For example, the received binary Base64 data:
 

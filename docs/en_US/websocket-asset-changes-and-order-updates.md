@@ -40,7 +40,7 @@ Overview: The request header carries an api-key to establish a connection with t
 
 1. Request Path:
 
-`wss://ws2.xxx.xxx/spotws_user/userData/ws`
+`wss://ws2.star-vaults.com/spotws_user/userData/ws`
 
 Replace "xxx" with your own domain name.
 
