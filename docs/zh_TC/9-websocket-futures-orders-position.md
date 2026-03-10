@@ -87,9 +87,9 @@
 
 ## 三.接收消息體
 
-建立連接成功後，後端返回提示：connect success
+建立連接成功後，後端返回提示：`connect success`
 
-訂閱成功後，後端返回提示：sub success
+訂閱成功後，後端返回提示：`sub success`
 
 ![](https://3090275533-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FldIEUBhG9c2o7BFGqB0s%2Fuploads%2Fgit-blob-dee6f3cb7369846cedd45e9efb152f671bd0febb%2Fimage_zkKOk6nA5c.png?alt=media)
 
