@@ -8,7 +8,9 @@
 
 ## 創建杠桿訂單
 
-<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/order`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v2/margin/order`&#x20;
+
+**速率限制：100次/2秒**
 
 #### Headers
 
@@ -54,7 +56,9 @@
 
 ## 杠桿訂單查詢
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/order`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/margin/order`
+
+**速率限制：20次/2秒**
 
 #### Query Parameters
 
