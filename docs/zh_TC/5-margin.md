@@ -104,7 +104,7 @@
 
 ### 撤銷槓桿訂單 V2 (推薦使用)
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v2/margin/cancel`
+<mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v2/margin/cancel`
 
 **速率限制: 100次/2秒**
 
