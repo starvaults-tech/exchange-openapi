@@ -1,7 +1,5 @@
 # CCXT Development Manual
 
-## CCXT Development Manual
-
 #### 1. Overview
 
 This exchange supports CCXT interface development based on Python version, which is convenient for strategy, quantitative, automated trading and other applications to land quickly.
