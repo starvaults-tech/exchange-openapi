@@ -117,7 +117,7 @@ class bitwind(ccxt.Exchange,ImplicitAPI):
 
 5.1 Add initialized exchange name
 
-Add the name of the exchange to the list of exchanges in the \_\_init\_\_.py file in the ccxt folder directory in the pyhton folder
+Add the name of the exchange to the list of exchanges in the `__init__.py` file in the ccxt folder directory in the pyhton folder
 
 Note: Lowercase letters, can't contain special characters, can't contain spaces
 
@@ -132,7 +132,7 @@ exchanges = [
 
 5.2 New interfaces
 
-In the ccxt file under the abstract folder directory, create a new interface file. For example bitwind.py and add the interface content for example:
+In the ccxt file under the abstract folder directory, create a new interface file. For example `bitwind.py` and add the interface content for example:
 
 ```
 from ccxt.base.types import Entry
@@ -149,7 +149,7 @@ class ImplicitAPI:
 
 5.3 New Master Methods
 
-In the ccxt folder, in the same directory as abstract, add a new bitwind.py file that implements the methods for requesting the Exchange OpenAPI, for example:
+In the ccxt folder, in the same directory as abstract, add a new `bitwind.py` file that implements the methods for requesting the Exchange OpenAPI, for example:
 
 ```
 import ccxt
@@ -297,7 +297,7 @@ class bitwind(ccxt.Exchange,ImplicitAPI):
 
 5.4 Method invocation
 
-New test\_bitwind.py file in the test folder in the ccxt folder directory, example:
+New `test_bitwind.py` file in the test folder in the ccxt folder directory, example:
 
 ```
 import ccxt 
