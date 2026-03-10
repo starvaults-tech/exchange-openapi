@@ -279,20 +279,20 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 
 #### Response:
 
-| time      | long   | `1595563624731` | Open Time                             |   |
-| --------- | ------ | --------------- | ------------------------------------- | - |
-| high      | float  | `9900`          | High Price                            |   |
-| low       | float  | `8800.34`       | Low Price                             |   |
-| open      | float  | `8700`          | Open Price                            |   |
-| last      | float  | `8900`          | Last Price                            |   |
-| vol       | float  | `4999`          | Trade Volume                          |   |
-| rose      | float  | 0               | Price increase or Price rise          |   |
-| symbol    | String | btcusdt         | symbol                                |   |
-| amount    | String | 1233            | Trading Volume, Quote Currency Volume |   |
-| askPrice  | String | 23321           | Best Ask Price                        |   |
-| askVolume | String | 3321            | Best Ask Size                         |   |
-| bidPrice  | String | 21              | Best Bid Price                        |   |
-| bidVolume | String | 12              | Best Bid Size                         |   |
+| time      | long   | `1595563624731` | Open Time                             |
+| --------- | ------ | --------------- | ------------------------------------- |
+| high      | float  | `9900`          | High Price                            |
+| low       | float  | `8800.34`       | Low Price                             |
+| open      | float  | `8700`          | Open Price                            |
+| last      | float  | `8900`          | Last Price                            |
+| vol       | float  | `4999`          | Trade Volume                          |
+| rose      | float  | 0               | Price increase or Price rise          |
+| symbol    | String | btcusdt         | symbol                                |
+| amount    | String | 1233            | Trading Volume, Quote Currency Volume |
+| askPrice  | String | 23321           | Best Ask Price                        |
+| askVolume | String | 3321            | Best Ask Size                         |
+| bidPrice  | String | 21              | Best Bid Price                        |
+| bidVolume | String | 12              | Best Bid Size                         |
 
 ### Recent Trades List
 
