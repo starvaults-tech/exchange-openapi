@@ -114,20 +114,20 @@ This endpoint checks connectivity to the server and retrieves server timestamp
 
 **Response:**
 
-| symbol            | string  | `BTCUSDT` | Name of the symbol                      | Currency to name  |
-| ----------------- | ------- | --------- | --------------------------------------- | ----------------- |
-| baseAsset         | string  | `BTC`     | Underlying asset for the symbol         | base currency     |
-| quoteAsset        | string  | `USDT`    | Quote asset for the symbol              | The base currency |
-| pricePrecision    | integer | `2`       | Precision of the price                  | Price Accuracy    |
-| quantityPrecision | integer | `6`       | Precision of the quantity               | Quantity accuracy |
-| limitAmountMin    | String  | 100       | Limit order minimum order amount quote  |                   |
-| limitPriceMin     | String  | 100       | Minimum price of a limit order          |                   |
-| limitVolumeMin    | String  | 100       | Limit order minimum order quantity base |                   |
-| baseAssetName     | String  | BTC       | Base Currency Display Name              |                   |
-| quoteAssetName    | String  | USDT      | Quote Currency Display Name             |                   |
-| SymbolName        | String  | BTC/USDT  | Trading Pair Display Name               |                   |
-| feeRateMaker      | String  | 0.002     | Maker Procedure rate                    |                   |
-| feeRateTaker      | String  | 0.002     | Taker Procedure rate                    |                   |
+| symbol            | string  | `BTCUSDT` | Name of the symbol                      |
+| ----------------- | ------- | --------- | --------------------------------------- |
+| baseAsset         | string  | `BTC`     | Underlying asset for the symbol         |
+| quoteAsset        | string  | `USDT`    | Quote asset for the symbol              |
+| pricePrecision    | integer | `2`       | Precision of the price                  |
+| quantityPrecision | integer | `6`       | Precision of the quantity               |
+| limitAmountMin    | String  | 100       | Limit order minimum order amount quote  |
+| limitPriceMin     | String  | 100       | Minimum price of a limit order          |
+| limitVolumeMin    | String  | 100       | Limit order minimum order quantity base |
+| baseAssetName     | String  | BTC       | Base Currency Display Name              |
+| quoteAssetName    | String  | USDT      | Quote Currency Display Name             |
+| SymbolName        | String  | BTC/USDT  | Trading Pair Display Name               |
+| feeRateMaker      | String  | 0.002     | Maker Procedure rate                    |
+| feeRateTaker      | String  | 0.002     | Taker Procedure rate                    |
 
 ### Market
 
