@@ -172,7 +172,7 @@ import json
 import urllib.parse
 import time
 
-# 交易所 API 文件：https://exchangedocsv2.gitbook.io/open-api-doc-v2/
+# 交易所 API 文件：https://star-vaults.gitbook.io/exchange-openapi/
 class bitwind(ccxt.Exchange,ImplicitAPI):
 
     def describe(self):
