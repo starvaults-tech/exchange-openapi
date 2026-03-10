@@ -890,7 +890,7 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 Security Type: USER\_DATA
 
-Endpoints under Account require an API-key and a signature.\\
+Endpoints under Account require an API-key and a signature.
 
 ### Account Information
 
