@@ -102,6 +102,45 @@
 
 ## 撤銷杠桿訂單
 
+### 撤銷槓桿訂單 V2 (推薦使用)
+
+<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/sapi/v2/margin/cancel`
+
+**速率限制: 100次/2秒**
+
+#### Headers
+
+| Name        | Type   | Description |
+| ----------- | ------ | ----------- |
+| X-CH-SIGN   | String | 簽名          |
+| X-CH-TS     | String | 時間戳         |
+| X-CH-APIKEY | String | 您的API-key   |
+
+#### Request Body
+
+| Name             | Type   | Description        |
+| ---------------- | ------ | ------------------ |
+| newClientOrderId | String | 客戶端訂單標識            |
+| symbol           | String | 幣對名稱E.g.`BTC/USDT` |
+| orderId          | String | 訂單id               |
+
+{% tabs %}
+{% tab title="200: OK " %}
+```javascript
+{
+    'symbol': 'BHTUSDT', 
+    'clientOrderId': '0', 
+    'orderId': '499890200602846976', 
+    'status': 'CANCELED'
+}
+```
+{% endtab %}
+{% endtabs %}
+
+**權重(IP/UID): 5**
+
+### 撤銷槓桿訂單 V1 (兼容舊版)
+
 <mark style="color:green;">`POST`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/cancel`
 
 #### Headers
@@ -145,9 +184,9 @@
 
 ## 杠桿當前委托
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v1/margin/openOrders`
+<mark style="color:blue;">`GET`</mark> `https://openapi.star-vaults.com/sapi/v2/margin/openOrders`
 
-**權重(IP/UID): 5**
+**速率限制: 20次/2秒**
 
 #### Query Parameters
 
