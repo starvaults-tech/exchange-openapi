@@ -18,6 +18,7 @@
 * [Official SDK](11-official-sdk.md)
 * [CCXT](ccxt/README.md)
   * [CCXT Information](ccxt/ccxt-information.md)
+  * [CCXT Development Manual](ccxt/ccxt-development-manual.md)
 * [FAQ](12-faq.md)
 * [Appendix](13-appendix.md)
-* [CCXT Development Manual](ccxt-development-manual.md)
+* [CCXT User Guide](ccxt-user-guide.md)
