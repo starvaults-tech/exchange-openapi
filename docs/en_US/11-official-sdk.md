@@ -2,56 +2,7 @@
 
 ### Demo Url
 
-<https://github.com/exchange2021>
-
-### Signed example
-
-```java
-/**
- * generate sign
- **/
-private String toSign(String timestamp, String method, String requestPath,
-                             String queryString, String body, String secretKey) throws Exception {
-    // sign
-    String preHash = preHash(timestamp, method, requestPath, queryString, body);
-    byte[] secretKeyBytes = secretKey.getBytes("UTF-8");
-    SecretKeySpec secretKeySpec = new SecretKeySpec(secretKeyBytes, "HmacSHA256");
-    Mac mac = (Mac) MAC.clone();
-    mac.init(secretKeySpec);
-    return Hex.encodeHexString(mac.doFinal(preHash.getBytes("UTF-8")));
-}
-
-/**
- * sign
- **/
-private String preHash(String timestamp, String method, String requestPath, String queryString, String body) {
-                                 
-    StringBuilder preHash = new StringBuilder();
-    preHash.append(timestamp);
-    preHash.append(method.toUpperCase());
-    preHash.append(requestPath);
-    if (org.apache.commons.lang3.StringUtils.isNotEmpty(queryString)) {
-        preHash.append("?").append(queryString);
-    }
-    if (org.apache.commons.lang3.StringUtils.isNotEmpty(body)) {
-        preHash.append(body);
-    }
-    return preHash.toString();
-}
-
-/**
- * queryString
- **/
-private String queryString(ServerHttpRequest request) {
-    String url = request.getURI().toString();
-    String queryString = "";
-    if (url.contains("?")) {
-        queryString = url.substring(url.lastIndexOf("?") + 1);
-    }
-    return queryString;
-}
-
-```
+[https://github.com/exchange2021](https://github.com/exchange2021)
 
 ### Here is a example of how to create order
 
@@ -63,7 +14,7 @@ OkHttpClient client = new OkHttpClient().newBuilder()
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}");
 Request request = new Request.Builder()
-  .url("https://openapi.xxx.com")
+  .url("https://openapi.star-vaults.com")
   .method("POST", body)
   .addHeader("X-CH-APIKEY", "Your API key")
   .addHeader("X-CH-TS", "1596543296058")
@@ -75,7 +26,7 @@ Response response = client.newCall(request).execute();
 
 * Go
 
-```java
+```go
 package main
 
 import (
@@ -87,7 +38,7 @@ import (
 
 func main() {
 
-  url := "https://openapi.xxx.com"
+  url := "https://openapi.star-vaults.com"
   method := "POST"
 
   payload := strings.NewReader("{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}")
@@ -114,10 +65,10 @@ func main() {
 
 * Python
 
-```java
+```python
 import requests
 
-url = "https://openapi.xxx.com"
+url = "https://openapi.star-vaults.com"
 
 payload = "{\"symbol\":\"BTCUSDT\",\"volume\":1,\"side\":\"BUY\",\"type\":\"LIMIT\",\"price\":10000,\"newClientOrderId\":\"\",\"recvWindow\":5000}"
 headers = {
@@ -135,11 +86,11 @@ print(response.text.encode('utf8'))
 
 * Php
 
-```java
+```php
 <?php
 require_once 'HTTP/Request2.php';
 $request = new HTTP_Request2();
-$request->setUrl('https://openapi.xxx.com');
+$request->setUrl('https://openapi.star-vaults.com');
 $request->setMethod(HTTP_Request2::METHOD_POST);
 $request->setConfig(array(
   'follow_redirects' => TRUE
@@ -168,11 +119,11 @@ catch(HTTP_Request2_Exception $e) {
 
 * NodeJs
 
-```java
+```javascript
 var request = require('request');
 var options = {
   'method': 'POST',
-  'url': 'https://openapi.xxx.com',
+  'url': 'https://openapi.star-vaults.com',
   'headers': {
     'X-CH-APIKEY': 'Your API key',
     'X-CH-TS': '1596543881257',
