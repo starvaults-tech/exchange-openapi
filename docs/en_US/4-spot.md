@@ -553,11 +553,11 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 
 #### Headers
 
-| Name        | Type   | Description           |
-| ----------- | ------ | --------------------- |
-| X-CH-APIKEY | String | Your API-key          |
-| X-CH-TS     | String | timestampResponses200 |
-| X-CH-SIGN   | String | Sign                  |
+| Name        | Type   | Description  |
+| ----------- | ------ | ------------ |
+| X-CH-APIKEY | String | Your API-key |
+| X-CH-TS     | String | Timestamp    |
+| X-CH-SIGN   | String | Sign         |
 
 {% tabs %}
 {% tab title="200: OK " %}
