@@ -10,8 +10,8 @@
 ## HTTP Error Codes
 
 * HTTP `4XX` return codes are used for malformed requests; the issue is on the sender's side.
-* HTTP 410 return code is used when breaking a request rate limit.
-* HTTP 418 means that if you continue to access after receiving 429, you will be blocked from IP, and the blocking time will be gradually extended from a minimum of 2 minutes to a maximum of 3 days for frequent violations of the restrictions.
+* HTTP `410` return code is used when breaking a request rate limit.
+* HTTP `418` means that if you continue to access after receiving 429, you will be blocked from IP, and the blocking time will be gradually extended from a minimum of 2 minutes to a maximum of 3 days for frequent violations of the restrictions.
 * HTTP `5XX` return codes are used for internal errors
 * HTTP `504` return code is used when the API successfully sent the message but not get a response within the timeout period. It is important to **NOT** treat this as a failure operation; the execution status is **UNKNOWN** and could have been a success.
 * All endpoints can possibly return an ERROR, the error payload is as follows:
